@@ -36,9 +36,9 @@ def get_period(matrix):
 	height = len(matrix)
 	length = len(matrix[0]) - 1
 	print('length =',length)
-	for period in range(1, length):
+	for period in range(1, length + 1):
 		if length % period != 0: continue
-		columns = list(filter(lambda x : x == 0 or period % x == 0, range(0, length - 1)))
+		columns = list(filter(lambda x : x % period == 0, range(0, length)))
 		print(columns)
 		if check_column(matrix, columns, period, length): return period
 	return length
@@ -47,7 +47,8 @@ def check_column(matrix, columns, period, length):
 	for x in columns:
 		y = (x + period) % length
 		for row in matrix:
-			if row[x] != row[y]: return False
+			for k in range(0, period):
+				if row[x + k] != row[y + k]: return False
 	return True
 
 print(get_period(matrix))
