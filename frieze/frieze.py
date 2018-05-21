@@ -2,7 +2,7 @@
 # -*- coding: utf8 -*-
 
 matrix = list()
-with open ('frieze_3.txt', 'r') as f:
+with open ('frieze_1.txt', 'r') as f:
 	for line in f.readlines():
 		line = line.strip()
 		if not len(line):
@@ -33,13 +33,10 @@ for row in matrix:
 	# print(str)
 
 def get_period(matrix):
-	height = len(matrix)
 	length = len(matrix[0]) - 1
-	print('length =',length)
-	for period in range(1, length + 1):
-		if length % period != 0: continue
+	divisor = list(filter(lambda x : length % x == 0, range(1, length + 1)))
+	for period in divisor:
 		columns = list(filter(lambda x : x % period == 0, range(0, length)))
-		print(columns)
 		if check_column(matrix, columns, period, length): return period
 	return length
 
@@ -47,8 +44,9 @@ def check_column(matrix, columns, period, length):
 	for x in columns:
 		y = (x + period) % length
 		for row in matrix:
-			for k in range(0, period):
-				if row[x + k] != row[y + k]: return False
+			for i in range(0, period):
+				if row[x + i] != row[y + i]: return False
 	return True
 
 print(get_period(matrix))
+
