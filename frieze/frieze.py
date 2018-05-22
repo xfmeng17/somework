@@ -2,7 +2,7 @@
 # -*- coding: utf8 -*-
 
 matrix = list()
-with open ('frieze_2.txt', 'r') as f:
+with open ('frieze_7.txt', 'r') as f:
 	for line in f.readlines():
 		line = line.strip()
 		if not len(line):
@@ -53,47 +53,52 @@ print(get_period(matrix))
 def vertical_at_axis(pat, x_axis):
 	height = len(pat)
 	length = len(pat[0])
-	offset = 1 if length % 2 == 0 else 0
+	# offset = 1 if length % 2 == 0 else 0
 
 	for y_lf in range(0, height):
-		lf_most = (x_axis - (length // 2) + offset) % length
-		rt_most = length - 1 - lf_most
 		for x_lf in range(0, length):
-			x_rt = (x_lf + ((x_axis - x_lf) * 2) + offset) % length
+			x_rt = (x_lf + (x_axis - x_lf) * 2) % length
 			y_rt = y_lf
-
 			# 0001 => |
 			if (pat[y_lf][x_lf] & 1):
-				if (not (pat[y_rt][x_rt] & 1)):
+				x_rt_tmp = (x_rt + 1) % length
+				if (not (pat[y_rt][x_rt_tmp] & 1)):
+					print('|', x_lf, y_lf, x_rt_tmp, y_rt, 'x_axis=', x_axis)
 					return False
 			# 0010 => /
-			elif (pat[y_lf][x_lf] & 2):
-				x_rt = x_rt - 1
-				y_rt = y_rt - 1
-				if (x_rt < lf_most or y_rt < 0):
+			if (pat[y_lf][x_lf] & 2):
+				x_rt_tmp = (x_rt) % length
+				y_rt_tmp = (y_rt - 1)
+				if (y_rt_tmp < 0):
+					print('/Y', x_lf, y_lf, x_rt_tmp, y_rt_tmp, 'x_axis=', x_axis)
 					return False
-				if (not (pat[y_rt][x_rt] & 8)):
+				if (not (pat[y_rt_tmp][x_rt_tmp] & 8)):
+					print('/', x_lf, y_lf, x_rt_tmp, y_rt_tmp, 'x_axis=', x_axis)
 					return False
 			# 0100 => -
-			elif (pat[y_lf][x_lf] & 4):
-				x_rt = x_rt - 1
-				if (x_rt < lf_most):
+			if (pat[y_lf][x_lf] & 4):
+				x_rt_tmp = (x_rt) % length
+				if (not (pat[y_rt][x_rt_tmp] & 4)):
+					print('-', x_lf, y_lf, x_rt_tmp, y_rt, 'x_axis=', x_axis)
 					return False
-				if (not (pat[y_rt][x_rt] & 4)):
+			# 1000 => \
+			if (pat[y_lf][x_lf] & 8):
+				x_rt_tmp = (x_rt - 1) % length
+				y_rt_tmp = (y_rt + 1)
+				if (y_rt_tmp >= height):
+					print('\\Y', x_lf, y_lf, x_rt_tmp, y_rt_tmp, 'x_axis=', x_axis)
 					return False
-			# 1000 => /
-			elif (pat[y_lf][x_lf] & 8):
-				x_rt = x_rt + 1
-				y_rt = y_rt + 1
-				if (x_rt > rt_most or y_rt > height - 1):
-					return False
-				if (not (pat[y_rt][x_rt] & 2)):
+				if (not (pat[y_rt_tmp][x_rt_tmp] & 2)):
+					print(pat[y_lf][x_lf])
+					print('\\', x_lf, y_lf, x_rt_tmp, y_rt_tmp, 'x_axis=', x_axis)
 					return False
 			# 0000 => blank
-			else:
-				if pat[y_rt][x_rt]:
+			if (pat[y_lf][x_lf] == 0):
+				x_rt_tmp = (x_rt) % length
+				if (pat[y_rt][x_rt_tmp] & 4):
+				# if (not (pat[y_rt][x_rt_tmp] & 5) and (pat[y_rt][x_rt_tmp] != 0)):
+					print('*', x_lf, y_lf, x_rt_tmp, y_rt, 'x_axis=', x_axis)
 					return False
-
 	return True
 
 def vertical(pat):
@@ -106,6 +111,7 @@ period = get_period(matrix)
 pattern = list()
 for row in matrix:
 	pattern.append(row[0: period])
-print(pattern)
+for row in pattern:
+	print(row)
 
 print(vertical(pattern))
