@@ -61,13 +61,13 @@ def vertical_at_axis(pat, x_axis):
 			y_rt = y_lf
 			# 0001 => |
 			if (pat[y_lf][x_lf] & 1):
-				x_rt_tmp = (x_rt + 1) % length
+				x_rt_tmp = (x_rt) % length
 				if (not (pat[y_rt][x_rt_tmp] & 1)):
 					print('|', x_lf, y_lf, x_rt_tmp, y_rt, 'x_axis=', x_axis)
 					return False
 			# 0010 => /
 			if (pat[y_lf][x_lf] & 2):
-				x_rt_tmp = (x_rt) % length
+				x_rt_tmp = (x_rt - 1) % length
 				y_rt_tmp = (y_rt - 1)
 				if (y_rt_tmp < 0):
 					print('/Y', x_lf, y_lf, x_rt_tmp, y_rt_tmp, 'x_axis=', x_axis)
@@ -77,7 +77,7 @@ def vertical_at_axis(pat, x_axis):
 					return False
 			# 0100 => -
 			if (pat[y_lf][x_lf] & 4):
-				x_rt_tmp = (x_rt) % length
+				x_rt_tmp = (x_rt - 1) % length
 				if (not (pat[y_rt][x_rt_tmp] & 4)):
 					print('-', x_lf, y_lf, x_rt_tmp, y_rt, 'x_axis=', x_axis)
 					return False
