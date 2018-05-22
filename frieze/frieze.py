@@ -57,14 +57,14 @@ def vertical_at_axis(pat, shift):
 	for y_start in range(0, height):
 		for s_start in slots:
 			s_symme = (len(slots) + 1 + (2 * shift) - s_start) % len(slots)
-			
+
 			x_start = s_start - 1
 			x_symme = s_symme - 1
 			y_symme = y_start
 
 			# 0001 => |
 			if (pat[y_start][x_start] & 1):
-				# x_symme = s_symme - 1
+				x_symme = s_symme - 1 + 1
 				y_symme = y_start
 				if (not (pat[y_symme][x_symme] & 1)):
 					print('|', x_start, y_start, x_symme, y_symme, 'shift=', shift)
@@ -72,7 +72,7 @@ def vertical_at_axis(pat, shift):
 
 			# 0010 => /
 			if (pat[y_start][x_start] & 2):
-				# x_symme = s_symme - 1
+				x_symme = s_symme - 1
 				y_symme = y_start - 1
 				if (y_symme < 0):
 					print("y_symme < 0")
@@ -83,7 +83,7 @@ def vertical_at_axis(pat, shift):
 
 			# 0100 => -
 			if (pat[y_start][x_start] & 4):
-				# x_symme = s_symme - 1
+				x_symme = s_symme - 1
 				y_symme = y_start
 				if (not (pat[y_symme][x_symme] & 4)):
 					print('-', x_start, y_start, x_symme, y_symme, 'shift=', shift)
@@ -91,7 +91,7 @@ def vertical_at_axis(pat, shift):
 
 			# 1000 => \
 			if (pat[y_start][x_start] & 8):
-				# x_symme = s_symme - 1
+				x_symme = s_symme - 1
 				y_symme = y_start + 1
 				if (y_symme >= height):
 					print("y_symme >= height")
@@ -102,6 +102,7 @@ def vertical_at_axis(pat, shift):
 
 			# 0000 => blank
 			if (pat[y_start][x_start] == 0):
+				x_symme = s_symme - 1
 				y_symme = y_start
 				if (pat[y_symme][x_symme] & 4):
 				# if (not (pat[y_symme][x_symme] & 5) and (pat[y_symme][x_symme] != 0)):
