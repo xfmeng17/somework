@@ -111,7 +111,7 @@ def vertical_at_axis(pat, shift):
 	return True
 
 def vertical(pat):
-	for shift in range(0, (len(pat[0]))):
+	for shift in range(0, (len(pat[0]) - 2)):
 		if (vertical_at_axis(pat, shift)):
 			return True
 	return False
