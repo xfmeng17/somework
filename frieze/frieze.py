@@ -50,60 +50,68 @@ def check_column(matrix, columns, period, length):
 
 print(get_period(matrix))
 
-def vertical_at_axis(pat, x_axis):
+def vertical_at_axis(pat, shift):
 	height = len(pat)
 	length = len(pat[0])
-	# offset = 1 if length % 2 == 0 else 0
+	slots = range(1, length)
+	for y_start in range(0, height):
+		for s_start in slots:
+			s_symme = (len(slots) + 1 + (2 * shift) - s_start) % len(slots)
+			
+			x_start = s_start - 1
+			x_symme = s_symme - 1
+			y_symme = y_start
 
-	for y_lf in range(0, height):
-		for x_lf in range(0, length):
-			x_rt = (x_lf + (x_axis - x_lf) * 2) % length
-			y_rt = y_lf
 			# 0001 => |
-			if (pat[y_lf][x_lf] & 1):
-				x_rt_tmp = (x_rt) % length
-				if (not (pat[y_rt][x_rt_tmp] & 1)):
-					print('|', x_lf, y_lf, x_rt_tmp, y_rt, 'x_axis=', x_axis)
+			if (pat[y_start][x_start] & 1):
+				# x_symme = s_symme - 1
+				y_symme = y_start
+				if (not (pat[y_symme][x_symme] & 1)):
+					print('|', x_start, y_start, x_symme, y_symme, 'shift=', shift)
 					return False
+
 			# 0010 => /
-			if (pat[y_lf][x_lf] & 2):
-				x_rt_tmp = (x_rt - 1) % length
-				y_rt_tmp = (y_rt - 1)
-				if (y_rt_tmp < 0):
-					print('/Y', x_lf, y_lf, x_rt_tmp, y_rt_tmp, 'x_axis=', x_axis)
+			if (pat[y_start][x_start] & 2):
+				# x_symme = s_symme - 1
+				y_symme = y_start - 1
+				if (y_symme < 0):
+					print("y_symme < 0")
 					return False
-				if (not (pat[y_rt_tmp][x_rt_tmp] & 8)):
-					print('/', x_lf, y_lf, x_rt_tmp, y_rt_tmp, 'x_axis=', x_axis)
+				if (not (pat[y_symme][x_symme] & 8)):
+					print('/', x_start, y_start, x_symme, y_symme, 'shift=', shift)
 					return False
+
 			# 0100 => -
-			if (pat[y_lf][x_lf] & 4):
-				x_rt_tmp = (x_rt - 1) % length
-				if (not (pat[y_rt][x_rt_tmp] & 4)):
-					print('-', x_lf, y_lf, x_rt_tmp, y_rt, 'x_axis=', x_axis)
+			if (pat[y_start][x_start] & 4):
+				# x_symme = s_symme - 1
+				y_symme = y_start
+				if (not (pat[y_symme][x_symme] & 4)):
+					print('-', x_start, y_start, x_symme, y_symme, 'shift=', shift)
 					return False
+
 			# 1000 => \
-			if (pat[y_lf][x_lf] & 8):
-				x_rt_tmp = (x_rt - 1) % length
-				y_rt_tmp = (y_rt + 1)
-				if (y_rt_tmp >= height):
-					print('\\Y', x_lf, y_lf, x_rt_tmp, y_rt_tmp, 'x_axis=', x_axis)
+			if (pat[y_start][x_start] & 8):
+				# x_symme = s_symme - 1
+				y_symme = y_start + 1
+				if (y_symme >= height):
+					print("y_symme >= height")
 					return False
-				if (not (pat[y_rt_tmp][x_rt_tmp] & 2)):
-					print(pat[y_lf][x_lf])
-					print('\\', x_lf, y_lf, x_rt_tmp, y_rt_tmp, 'x_axis=', x_axis)
+				if (not (pat[y_symme][x_symme] & 2)):
+					print('\\', x_start, y_start, x_symme, y_symme, 'shift=', shift)
 					return False
+
 			# 0000 => blank
-			if (pat[y_lf][x_lf] == 0):
-				x_rt_tmp = (x_rt) % length
-				if (pat[y_rt][x_rt_tmp] & 4):
-				# if (not (pat[y_rt][x_rt_tmp] & 5) and (pat[y_rt][x_rt_tmp] != 0)):
-					print('*', x_lf, y_lf, x_rt_tmp, y_rt, 'x_axis=', x_axis)
+			if (pat[y_start][x_start] == 0):
+				y_symme = y_start
+				if (pat[y_symme][x_symme] & 4):
+				# if (not (pat[y_symme][x_symme] & 5) and (pat[y_symme][x_symme] != 0)):
+					print('*', x_start, y_start, x_symme, y_symme, 'shift=', shift)
 					return False
 	return True
 
 def vertical(pat):
-	for x_axis in range(0, len(pat[0])):
-		if (vertical_at_axis(pat, x_axis)):
+	for shift in range(0, (len(pat[0]))):
+		if (vertical_at_axis(pat, shift)):
 			return True
 	return False
 
