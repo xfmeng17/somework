@@ -125,3 +125,10 @@ for row in matrix:
 for row in pattern:
 	print(row)
 print(vertical(pattern))
+
+pattern = list()
+for row in matrix:
+	pattern.append(row[0: period + 1])
+for row in pattern:
+	print(row)
+print(vertical(pattern))
