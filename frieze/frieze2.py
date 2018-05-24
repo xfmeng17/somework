@@ -3,7 +3,7 @@
 import os
 
 matrix = list()
-file_name = 'frieze_2.txt'
+file_name = 'frieze_7.txt'
 with open (file_name, 'r') as f:
 	for line in f.readlines():
 		line = line.strip()
@@ -184,6 +184,19 @@ def vertical(pat):
 			return True
 	return False
 
+def horizontal(pat):
+	height = len(pat)
+	length = len(pat[0])
+	matrixT = list()
+	for x_start in range(0, length):
+		matRow = list()
+		for y_start in range(0, height):
+			matRow.append(pat[y_start][x_start])
+		matrixT.append(matRow)
+	#for row in matrixT:
+	#	print(row)
+	return vertical(pat)
+	
 period = get_period(matrix)
 #pattern = list()
 #for row in matrix:
@@ -198,5 +211,6 @@ for row in matrix:
 for row in pattern:
 	print(row)
 print(vertical(pattern))
+print(horizontal(pattern))
 
 os.system("pause")
