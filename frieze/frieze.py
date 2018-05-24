@@ -1,149 +1,51 @@
-#!/usr/bin/env python3
-# -*- coding: utf8 -*-
+class Frieze():
+	def __init__(self, filepath):
+		self.pattern = list()
 
-matrix = list()
-file_name = 'frieze_2.txt'
-with open (file_name, 'r') as f:
-	for line in f.readlines():
-		line = line.strip()
-		if not len(line):
-			continue
-		matrix.append(list(map(int, line.split())))
-print(file_name)
+		# read pattern from file
+		with open (filepath, 'r') as file:
+			for line in file.readlines():
+				line = line.strip()
+				if not len(line):
+					continue
+				self.pattern.append(list(map(int, line.split())))
 
-def check_input(matrix):
-	height = len(matrix)
-	if height < 2 or height > 16: return False
-	length = len(matrix[0])
-	if length < 4 or length > 50: return False
-	for row in matrix:
-		if len(row) != length: return False
-		for col in row:
-			if int(col) < 0 or int(col) > 15: return False
-	return True
+		# 1. basic conditions: check height, length and number
+		self.height = len(self.pattern)
+		if self.height < 3 or self.height > 17:
+			raise FriezeError('Incorrect input.')
+		self.length = len(self.pattern[0])
+		if self.length < 5 or self.length > 50:
+			raise FriezeError('Incorrect input.')
+		for row in self.pattern:
+			if len(row) != self.length:
+				raise FriezeError('Incorrect input.')
+			for num in row:
+				if num < 0 or num > 15:
+					raise FriezeError('Incorrect input.')
+		# 2. further contions:
+		# check first line must be 4 or 12 
+		# and last line must in [4, 8) except the last column
+		for j in range(0, self.length - 1):
+			if self.pattern[0][j] != 4 and self.pattern[0][j] != 12:
+				raise FriezeError('Incorrect input.')
+			if self.pattern[self.height - 1][j] < 4 or self.pattern[self.height - 1][j] > 8:
+				raise FriezeError('Incorrect input.')
+		# check last column must be 0 or 1
+		for i in range(0, self.height):
+			if self.pattern[i][self.length - 1] != 0 and self.pattern[i][self.length - 1] != 1:
+				raise FriezeError('Incorrect input.')
+		# check cross
+		for i in range(0, self.height - 1):
+			for j in range(0, self.length):
+				if (self.pattern[i][j] & 8 and self.pattern[i + 1][j] & 2):
+					raise FriezeError('Incorrect input.')
+		# check other further conditions..
 
-# print(check_input(matrix))
+# define class FriezeError
+class FriezeError(Exception):
+	def __init__(self, errmsg):
+		self.errmsg = errmsg
 
-for row in matrix:
-	str = ''
-	for col in row:
-		if int(col) & 1 : str += '|'
-		elif int(col) & 2 : str += '/'
-		elif int(col) & 4 : str += '-'
-		elif int(col) & 8 : str += '\\'
-		else: str += ' '
-	# print(str)
-
-def get_period(matrix):
-	length = len(matrix[0]) - 1
-	divisor = list(filter(lambda x : length % x == 0, range(1, length + 1)))
-	for period in divisor:
-		columns = list(filter(lambda x : x % period == 0, range(0, length)))
-		if check_column(matrix, columns, period, length): return period
-	return length
-
-def check_column(matrix, columns, period, length):
-	for x in columns:
-		y = (x + period) % length
-		for row in matrix:
-			for i in range(0, period):
-				if row[x + i] != row[y + i]: return False
-	return True
-
-print(get_period(matrix))
-
-def vartical_reflect(matrix, shift):
-	height = len(matrix)
-	length = len(matrix[0])
-	for y in range(0, height):
-		for x in range(0, length):
-			if (matrix[y][x] & 1):
-				_x = (length - 1 - (2 * shift) - x) % length
-				if _x == 0 + shift or _x == length - 1 - shift: continue
-				if not (matrix[y][_x] & 1):
-					return False
-	return True
-# for shift in range(0, len(matrix[0])):
-# 	print(vartical_reflect(matrix, shift))
-
-def vertical_at_axis(pat, shift):
-	height = len(pat)
-	length = len(pat[0])
-	for y_start in range(0, height):
-		for x_start in range(0, length):
-
-			# 0001 => |
-			if (pat[y_start][x_start] & 1):
-				x_symme = ((length - 1) - (2 * shift) - x_start) % length
-				y_symme = y_start
-				if (not (pat[y_symme][x_symme] & 1)):
-					print('|', x_start, y_start, x_symme, y_symme, 'shift=', shift)
-					return False
-
-			# 0010 => /
-			if (pat[y_start][x_start] & 2):
-				x_symme = ((length - 1) - (2 * shift) - x_start) % length
-				y_symme = y_start - 1
-				if (y_symme < 0):
-					print("y_symme < 0")
-					return False
-				if (not (pat[y_symme][x_symme] & 8)):
-					print('/', x_start, y_start, x_symme, y_symme, 'shift=', shift)
-					return False
-
-			# 0100 => -
-			if (pat[y_start][x_start] & 4):
-				x_symme = ((length - 1) - (2 * shift) - x_start) % length
-				y_symme = y_start
-				if (not (pat[y_symme][x_symme] & 4)):
-					print('-', x_start, y_start, x_symme, y_symme, 'shift=', shift)
-					return False
-
-			# 1000 => \
-			if (pat[y_start][x_start] & 8):
-				x_symme = ((length - 1) - (2 * shift) - x_start) % length
-				y_symme = y_start + 1
-				if (y_symme >= height):
-					print("y_symme >= height")
-					return False
-				if (not (pat[y_symme][x_symme] & 2)):
-					print('\\', x_start, y_start, x_symme, y_symme, 'shift=', shift)
-					return False
-
-			# 0000 => blank
-			if (pat[y_start][x_start] == 0):
-				x_symme = ((length - 1) - (2 * shift) - x_start) % length
-				y_symme = y_start
-				if (pat[y_symme][x_symme] & 4):
-					print('*', x_start, y_start, x_symme, y_symme, 'shift=', shift)
-					return False
-	return True
-
-def vertical(pat):
-	for shift in range(0, len(pat[0])):
-		if (vertical_at_axis(pat, shift)):
-			return True
-	return False
-
-period = get_period(matrix)
-
-# pattern = list()
-# for row in matrix:
-# 	pattern.append(row[0: period - 1])
-# for row in pattern:
-# 	print(row)
-# print(vertical(pattern))
-
-pattern = list()
-for row in matrix:
-	pattern.append(row[0: period])
-for row in pattern:
-	print(row)
-print(vertical(pattern))
-
-# pattern = list()
-# for row in matrix:
-# 	pattern.append(row[0: period + 1])
-# for row in pattern:
-# 	print(row)
-# print(vertical(pattern))
+# from frieze import *
+# frieze = Frieze('frieze_1.txt')

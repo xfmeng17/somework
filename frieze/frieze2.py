@@ -11,7 +11,7 @@ with open (file_name, 'r') as f:
 		if not len(line):
 			continue
 		matrix.append(list(map(int, line.split())))
-print(file_name)
+print(matrix)
 	
 def check_input(matrix):
 	height = len(matrix)
