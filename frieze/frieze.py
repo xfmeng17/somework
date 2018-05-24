@@ -28,18 +28,18 @@ class Frieze():
 		# and last line must in [4, 8) except the last column
 		for j in range(0, self.length - 1):
 			if self.pattern[0][j] != 4 and self.pattern[0][j] != 12:
-				raise FriezeError('Incorrect input.')
+				raise FriezeError('Input does not represent a frieze.')
 			if self.pattern[self.height - 1][j] < 4 or self.pattern[self.height - 1][j] > 8:
-				raise FriezeError('Incorrect input.')
+				raise FriezeError('Input does not represent a frieze.')
 		# check last column must be 0 or 1
 		for i in range(0, self.height):
 			if self.pattern[i][self.length - 1] != 0 and self.pattern[i][self.length - 1] != 1:
-				raise FriezeError('Incorrect input.')
+				raise FriezeError('Input does not represent a frieze.')
 		# check cross
 		for i in range(0, self.height - 1):
 			for j in range(0, self.length):
 				if (self.pattern[i][j] & 8 and self.pattern[i + 1][j] & 2):
-					raise FriezeError('Incorrect input.')
+					raise FriezeError('Input does not represent a frieze.')
 		# check other further conditions..
 
 # define class FriezeError
