@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf8 -*-
 import os
+import operator
 
 matrix = list()
-file_name = 'frieze_7.txt'
+file_name = 'frieze_1.txt'
 with open (file_name, 'r') as f:
 	for line in f.readlines():
 		line = line.strip()
@@ -118,12 +119,13 @@ def vertical_at_axis(pat, shift):
 
 def vertical_at_point(pat, shift):
 	height = len(pat)
-	print("height", height)
 	length = len(pat[0])
-	print("length", length)
 	for y_start in range(0, height):
 		for x_start in range(0, length):
-			totalNum = shift * 2 - 1
+			if (length % 2 == 0):
+				totalNum = shift * 2 - 1
+			else:
+				totalNum = shift * 2
 
 			if(x_start > totalNum):
 				totalNum = totalNum + length
@@ -196,7 +198,121 @@ def horizontal(pat):
 	#for row in matrixT:
 	#	print(row)
 	return vertical(pat)
+
+def rotation_at_middle(pat, shift):
+	height = len(pat)
+	length = len(pat[0])
+	for y_start in range(0, height):
+		for x_start in range(0, length):
+			totalNum = shift * 2 - 1
+
+			if(x_start > totalNum):
+				totalNum = totalNum + length
+			# 0001 => |
+			if (pat[y_start][x_start] & 1):
+				x_symme = (totalNum - x_start) % length
+				y_symme = height - y_start
+				if (not (pat[y_symme][x_symme] & 1)):
+					print('|', x_start, y_start, x_symme, y_symme, 'shift=', shift)
+					return False
+
+			# 0010 => /
+			if (pat[y_start][x_start] & 2):
+				x_symme = (totalNum - 1 - x_start) % length
+				y_symme = height - y_start
+				if (not (pat[y_symme][x_symme] & 2)):
+					print('/', x_start, y_start, x_symme, y_symme, 'shift=', shift)
+					return False
+
+			# 0100 => -
+			if (pat[y_start][x_start] & 4):
+				x_symme = (totalNum - 1 - x_start) % length
+				y_symme = height - 1 - y_start
+				if (not (pat[y_symme][x_symme] & 4)):
+					print('-', x_start, y_start, x_symme, y_symme, 'shift=', shift)
+					return False
+
+			# 1000 => \
+			if (pat[y_start][x_start] & 8):
+				x_symme = (totalNum - 1 - x_start) % length
+				y_symme = height - 2 - y_start
+				if (y_symme >= height):
+					print("y_symme >= height", y_symme, height, y_start)
+					return False
+				if (not (pat[y_symme][x_symme] & 8)):
+					print('\\', x_start, y_start, x_symme, y_symme, 'shift=', shift)
+					return False
+
+			# 0000 => blank
+			if (pat[y_start][x_start] == 0):
+				x_symme = (totalNum - 1 - x_start) % length
+				y_symme = height - 1 - y_start
+				if (pat[y_symme][x_symme] & 4):
+					print('*', x_start, y_start, x_symme, y_symme, 'shift=', shift)
+					return False
+	return True
 	
+def rotation_at_point(pat, shift):
+	height = len(pat)
+	length = len(pat[0])
+	for y_start in range(0, height):
+		for x_start in range(0, length):
+			totalNum = shift * 2
+
+			if(x_start > totalNum):
+				totalNum = totalNum + length
+			# 0001 => |
+			if (pat[y_start][x_start] & 1):
+				x_symme = (totalNum - x_start) % length
+				y_symme = height - y_start
+				if (not (pat[y_symme][x_symme] & 1)):
+					print('|', x_start, y_start, x_symme, y_symme, 'shift=', shift)
+					return False
+
+			# 0010 => /
+			if (pat[y_start][x_start] & 2):
+				x_symme = (totalNum - 1 - x_start) % length
+				y_symme = height - y_start
+				if (not (pat[y_symme][x_symme] & 2)):
+					print('/', x_start, y_start, x_symme, y_symme, 'shift=', shift)
+					return False
+
+			# 0100 => -
+			if (pat[y_start][x_start] & 4):
+				x_symme = (totalNum - 1 - x_start) % length
+				y_symme = height - 1 - y_start
+				if (not (pat[y_symme][x_symme] & 4)):
+					print('-', x_start, y_start, x_symme, y_symme, 'shift=', shift)
+					return False
+
+			# 1000 => \
+			if (pat[y_start][x_start] & 8):
+				x_symme = (totalNum - 1 - x_start) % length
+				y_symme = height - 2 - y_start
+				if (y_symme >= height):
+					print("y_symme >= height", y_symme, height, y_start)
+					return False
+				if (not (pat[y_symme][x_symme] & 8)):
+					print('\\', x_start, y_start, x_symme, y_symme, 'shift=', shift)
+					return False
+
+			# 0000 => blank
+			if (pat[y_start][x_start] == 0):
+				x_symme = (totalNum - 1 - x_start) % length
+				y_symme = height - 1 - y_start
+				if (pat[y_symme][x_symme] & 4):
+					print('*', x_start, y_start, x_symme, y_symme, 'shift=', shift)
+					return False
+	return True
+
+	
+def rotation(pat):	
+	shiftMax = len(pat[0])
+	shiftMax = shiftMax // 2
+	for shift in range(1, shiftMax + 1):
+		if (rotation_at_middle(pat, shift) or rotation_at_point(pat, shift)):
+			return True
+	return False
 period = get_period(matrix)
 #pattern = list()
 #for row in matrix:
@@ -210,7 +326,9 @@ for row in matrix:
 	pattern.append(row[0: period])
 for row in pattern:
 	print(row)
-print(vertical(pattern))
-print(horizontal(pattern))
+
+print(rotation(pattern))
+#print(vertical(pattern))
+#print(horizontal(pattern))
 
 os.system("pause")
