@@ -42,6 +42,23 @@ class Frieze():
 					raise FriezeError('Input does not represent a frieze.')
 		# check other further conditions..
 
+		# calculate period
+		self.period = 0
+		for period in range(1, self.length):
+			if self.checkPeriod(period):
+				self.period = period
+				break
+				# print(self.period)
+		if self.period == 0:
+			raise FriezeError('Input does not represent a frieze.')
+
+	def checkPeriod(self, period):
+		for row in self.pattern:
+			for j in range(0, period):
+				if row[j] != row[j + period]:
+					return False
+		return True
+
 # define class FriezeError
 class FriezeError(Exception):
 	def __init__(self, errmsg):
