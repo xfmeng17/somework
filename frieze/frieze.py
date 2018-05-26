@@ -158,11 +158,10 @@ class Frieze ():
 
 	def isRotation (self):
 		pat = self.pattern
-		g = self.period // 2
 		for i in range(0, self.height):
 			for j in range(0, self.period):
 				m = self.height - 1 - i
-				n = 2 * g - j
+				n = self.period - j
 				if ((pat[i][j] & 1) and (not (pat[m + 1][n] & 1))):
 					return False
 				if ((pat[i][j] & 2) and (not (pat[m + 1][n - 1] & 2))):
