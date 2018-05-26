@@ -133,6 +133,75 @@ class Frieze ():
 					return False
 		return True
 
+	def isGlide (self):
+		pat = self.pattern
+		g = self.period // 2
+		for upper in range(0, self.height):
+			lower = self.height - 1 - upper
+			for j in range(0, self.period + 1):
+				# 0001 => |
+				if ((pat[upper][j] & 1) and (not (pat[lower + 1][j + g]))):
+					return False
+				# 0010 => /
+				if ((pat[upper][j] & 2) and (not (pat[lower][j + g] & 8))):
+					return False
+				# 0100 => -
+				if ((pat[upper][j] & 4) and (not (pat[lower][j + g] & 4))):
+					return False
+				# 1000 => \
+				if ((pat[upper][j] & 8) and (not (pat[lower][j + g] & 2))):
+					return False
+				# 0000 => blank
+				if ((pat[upper][j] == 0) and (pat[lower][j + g] & 14)):
+					return False
+		return True
+
+	def isRotation (self):
+		pat = self.pattern
+		g = self.period // 2
+		for i in range(0, self.height):
+			for j in range(0, self.period):
+				m = self.height - 1 - i
+				n = 2 * g - j
+				if ((pat[i][j] & 1) and (not (pat[m + 1][n] & 1))):
+					return False
+				if ((pat[i][j] & 2) and (not (pat[m + 1][n - 1] & 2))):
+					return False
+				if ((pat[i][j] & 4) and (not (pat[m][n - 1] & 4))):
+					return False
+				if ((pat[i][j] & 8) and (not (pat[m - 1][n - 1] & 8))):
+					return False
+		return True
+
+	def analyse (self):
+		analyseMsg = (
+			' only.',
+			' and vertical reflection only.',
+			' and horizontal reflection only.',
+			' and glided horizontal reflection only.',
+			' and rotation only.',
+			', glided horizontal and vertical reflections, and rotation only.',
+			', horizontal and vertical reflections, and rotation only.'
+		)
+		message = 'Pattern is a frieze of period ' + str(self.period) + ' that '
+		message += 'is invariant under translation'
+		if (self.isVertiRef()):
+			if (self.isHorizRef()):
+				print(message + analyseMsg[6])
+			elif (self.isGlide()):
+				print(message + analyseMsg[5])
+			else:
+				print(message + analyseMsg[1])
+		else:
+			if (self.isHorizRef()):
+				print(message + analyseMsg[2])
+			elif (self.isGlide()):
+				print(message + analyseMsg[3])
+			elif (self.isRotation()):
+				print(message + analyseMsg[4])
+			else:
+				print(message + analyseMsg[0])
+
 # define class FriezeError
 class FriezeError (Exception):
 	def __init__(self, errmsg):
@@ -140,13 +209,12 @@ class FriezeError (Exception):
 
 for i in range(1, 8):
 	filename = 'frieze_' + str(i) + '.txt'
-	# filename = 'frieze_7.txt'
 	frieze = Frieze(filename)
-	print('file = ', filename)
+	# print('file = ', filename)
 	# print('height =', frieze.height)
 	# print('length =', frieze.length)
-	print('isVertRef = ', frieze.isVertiRef())
-	print('isHoriRef = ', frieze.isHorizRef())
-
-# from frieze import *
-# frieze = Frieze('frieze_1.txt')
+	# print('isVertRef = ', frieze.isVertiRef())
+	# print('isHoriRef = ', frieze.isHorizRef())
+	# print('isGlide =', frieze.isGlide())
+	# print('isRotation =', frieze.isRotation())
+	frieze.analyse()
