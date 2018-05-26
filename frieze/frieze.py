@@ -59,10 +59,61 @@ class Frieze():
 					return False
 		return True
 
+	def isVerticalRef(self):
+		axisStart = self.period // 2
+		axisEnd = axisStart + self.period
+		for axis in range(axisStart, axisEnd + 1):
+			if self.isVerticalRefByLine(axis) or self.isVerticalRefByColumn(axis):
+				return True
+		return False
+
+	def isVerticalRefByLine(self, axis):
+		pat = self.pattern
+		for left in range(axis - (self.period // 2), axis + 1):
+			right = axis * 2 - left
+			for i in range(0, self.height):
+				# 0001 => |
+				if ((pat[i][left] & 1) and not (pat[i][right] & 1)):
+					return False
+				# 0010 => /
+				if ((pat[i][left] & 2) and not (pat[i - 1][right - 1] & 8)):
+					return False
+				# 0100 => -
+				if ((pat[i][left] & 4) and not (pat[i][right - 1] & 4)):
+					return False
+				# 1000 => \
+				if ((pat[i][left] & 8) and not (pat[i + 1][right - 1] & 2)):
+					return False
+		return True
+
+	def isVerticalRefByColumn(self, axis):
+		pat = self.pattern
+		for left in range(axis - (self.period // 2), axis + 1):
+			right = axis * 2 - left
+			for i in range(0, self.height):
+				# 0001 => |
+				if ((pat[i][left] & 1) and not (pat[i][right + 1] & 1)):
+					return False
+				# 0010 => /
+				if ((pat[i][left] & 2) and not (pat[i - 1][right] & 8)):
+					return False
+				# 0100 => -
+				if ((pat[i][left] & 4) and not (pat[i][right] & 4)):
+					return False
+				# 1000 => \
+				if ((pat[i][left] & 8) and not (pat[i + 1][right] & 2)):
+					return False
+		return True
+
 # define class FriezeError
 class FriezeError(Exception):
 	def __init__(self, errmsg):
 		self.errmsg = errmsg
+
+filename = 'frieze_7.txt'
+print('file =',filename)
+frieze = Frieze(filename)
+print('isVerticalRef = ', frieze.isVerticalRef())
 
 # from frieze import *
 # frieze = Frieze('frieze_1.txt')
