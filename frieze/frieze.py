@@ -1,5 +1,5 @@
-class Frieze():
-	def __init__(self, filepath):
+class Frieze ():
+	def __init__ (self, filepath):
 		self.pattern = list()
 
 		# read pattern from file
@@ -52,22 +52,22 @@ class Frieze():
 		if self.period == 0:
 			raise FriezeError('Input does not represent a frieze.')
 
-	def checkPeriod(self, period):
+	def checkPeriod (self, period):
 		for row in self.pattern:
 			for j in range(0, period):
 				if row[j] != row[j + period]:
 					return False
 		return True
 
-	def isVerticalRef(self):
+	def isVertiRef (self):
 		axisStart = self.period // 2
 		axisEnd = axisStart + self.period
 		for axis in range(axisStart, axisEnd + 1):
-			if self.isVerticalRefByLine(axis) or self.isVerticalRefByColumn(axis):
+			if self.isVertiRefByLine(axis) or self.isVertiRefByColumn(axis):
 				return True
 		return False
 
-	def isVerticalRefByLine(self, axis):
+	def isVertiRefByLine (self, axis):
 		pat = self.pattern
 		for left in range(axis - (self.period // 2), axis + 1):
 			right = axis * 2 - left
@@ -84,9 +84,12 @@ class Frieze():
 				# 1000 => \
 				if ((pat[i][left] & 8) and not (pat[i + 1][right - 1] & 2)):
 					return False
+				# 0000 => blank
+				if ((pat[i][left] == 0) and (pat[i][right] & 4)):
+					return False
 		return True
 
-	def isVerticalRefByColumn(self, axis):
+	def isVertiRefByColumn (self, axis):
 		pat = self.pattern
 		for left in range(axis - (self.period // 2), axis + 1):
 			right = axis * 2 - left
@@ -103,17 +106,47 @@ class Frieze():
 				# 1000 => \
 				if ((pat[i][left] & 8) and not (pat[i + 1][right] & 2)):
 					return False
+				# 0000 => blank
+				if ((pat[i][left] == 0) and (pat[i][right] & 4)):
+					return False
+		return True
+
+	def isHorizRef (self):
+		pat = self.pattern
+		for upper in range(0, self.height):
+			lower = self.height - 1 - upper
+			for j in range(0, self.length):
+				# 0001 => |
+				if ((pat[upper][j] & 1) and (not (pat[lower + 1][j]))):
+					return False
+				# 0010 => /
+				if ((pat[upper][j] & 2) and (not (pat[lower][j] & 8))):
+					return False
+				# 0100 => -
+				if ((pat[upper][j] & 4) and (not (pat[lower][j] & 4))):
+					return False
+				# 1000 => \
+				if ((pat[upper][j] & 8) and (not (pat[lower][j] & 2))):
+					return False
+				# 0000 => blank
+				if ((pat[upper][j] == 0) and (pat[lower][j] & 14)):
+					return False
 		return True
 
 # define class FriezeError
-class FriezeError(Exception):
+class FriezeError (Exception):
 	def __init__(self, errmsg):
 		self.errmsg = errmsg
 
-filename = 'frieze_7.txt'
-print('file =',filename)
-frieze = Frieze(filename)
-print('isVerticalRef = ', frieze.isVerticalRef())
+for i in range(1, 8):
+	filename = 'frieze_' + str(i) + '.txt'
+	# filename = 'frieze_7.txt'
+	frieze = Frieze(filename)
+	print('file = ', filename)
+	# print('height =', frieze.height)
+	# print('length =', frieze.length)
+	print('isVertRef = ', frieze.isVertiRef())
+	print('isHoriRef = ', frieze.isHorizRef())
 
 # from frieze import *
 # frieze = Frieze('frieze_1.txt')
