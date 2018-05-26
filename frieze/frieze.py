@@ -176,12 +176,12 @@ class Frieze ():
 	def analyse (self):
 		analyseMsg = (
 			' only.',
-			' and vertical reflection only.',
-			' and horizontal reflection only.',
-			' and glided horizontal reflection only.',
-			' and rotation only.',
-			', glided horizontal and vertical reflections, and rotation only.',
-			', horizontal and vertical reflections, and rotation only.'
+			'\n        and vertical reflection only.',
+			'\n        and horizontal reflection only.',
+			'\n        and glided horizontal reflection only.',
+			'\n        and rotation only.',
+			',\n        glided horizontal and vertical reflections, and rotation only.',
+			',\n        horizontal and vertical reflections, and rotation only.'
 		)
 		message = 'Pattern is a frieze of period ' + str(self.period) + ' that '
 		message += 'is invariant under translation'
