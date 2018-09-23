@@ -1,5 +1,12 @@
 ### 每周工作总结
 
+#### 2018-09-21
+1. 优化Rerank脚本的前端发布逻辑和流程，添加发布限制和快速发布新功能。
+2. 迁移Mcall后台代码及cron任务，在`CheckErrorData`中添加`total_cnt > 10`和`passive_bucket_id is not null`的db检索限制。
+3. 在数据白板拉取图片的接口中，通过单独处理key，以解决key不是合法video_id时导致批量拉取视频信息失败，以致无法在前端正确显示图片的问题。
+4. 修复多处因迁移新后台导致的`$this->db`需升级为`$this->tool_model->db`的问题。
+5. 更新`PermissionAdmin`中接口`GetList`和`GetUserConfig`以适配新的使用需求。
+
 #### 2018-09-14
 1. 迁移数据白板前后端检索数据的接口。
 2. * 解决Dtools的ssh命令中ip缺失的问题。
