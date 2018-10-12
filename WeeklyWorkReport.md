@@ -6,8 +6,8 @@
     - 前端侧还未实现显示公共脚本被引用列表的UI。
 
 
-- [ ] a task list item
-
+- [ ] TriggerDebug中HG单独支持omgid和hgid。
+- [ ] 增删改的时候，要同步更新cite_map的信息，可以用LIKE进行模糊匹配。
 
 #####  10-10 16:15
 1. 前端UI暂时仿【实时算法分析】做，但是其前后端居然还没迁移。
@@ -16,12 +16,12 @@
 ##### 10-09 18:56
 2. Trigger模块后端添加对多可操作人的支持，熟悉rerank相关的各种表结构。
 3. Rerank脚本添加【公共/普通】脚本类型的前后端支持。
-    - <del> rerank_script表添加2个字段，stype or type 表示类型，普通/公共， cite_list表示引用关系，字符串，;分隔吧。<del>
-    - <del> 发布时，dispatch的文件名字不要用Rerank{$id}.lua，而是使用脚本名字，所以要控制公共脚本的名字为64位以下的英文名。<del>
-    -  增删改的时候，要同步更新cite_map的信息，可以用LIKE进行模糊匹配。
-    - <del> 需求一个拉取全部公共脚本id + name的接口。<del>
-    - <del> 仿【实时算法分析】做普通脚本引用公用脚本操作的UI。<del>
-    - <del> 点击触发'require(xxxxxx)'的clipboard拷贝。<del>
+    - [x] rerank_script表添加2个字段，stype or type 表示类型，普通/公共， cite_list表示引用关系，字符串，;分隔吧。
+    - [x] 发布时，dispatch的文件名字不要用Rerank{$id}.lua，而是使用脚本名字，所以要控制公共脚本的名字为64位以下的英文名。
+    - [ ] 增删改的时候，要同步更新cite_map的信息，可以用LIKE进行模糊匹配。
+    - [x] 需求一个拉取全部公共脚本id + name的接口。
+    - [x] 仿【实时算法分析】做普通脚本引用公用脚本操作的UI。
+    - [x] 点击触发'require(xxxxxx)'的clipboard拷贝。
 
 ##### 10-08 18:46 
 1. Trigger模块前端侧添加多可操作人，发布时发送异步请求，升级Trigger模块发布时的逻辑控制。 
