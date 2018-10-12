@@ -18,7 +18,7 @@
 3. Rerank脚本添加【公共/普通】脚本类型的前后端支持。
     - [x] rerank_script表添加2个字段，stype or type 表示类型，普通/公共， cite_list表示引用关系，字符串，;分隔吧。
     - [x] 发布时，dispatch的文件名字不要用Rerank{$id}.lua，而是使用脚本名字，所以要控制公共脚本的名字为64位以下的英文名。
-    - [ ] 增删改的时候，要同步更新cite_map的信息，可以用LIKE进行模糊匹配。
+    - <del> [ ]  增删改的时候，要同步更新cite_map的信息，可以用LIKE进行模糊匹配。 <del>
     - [x] 需求一个拉取全部公共脚本id + name的接口。
     - [x] 仿【实时算法分析】做普通脚本引用公用脚本操作的UI。
     - [x] 点击触发'require(xxxxxx)'的clipboard拷贝。
