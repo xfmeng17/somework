@@ -4,10 +4,17 @@
 
 ----------
 
-#### trimnewline
+#### find-id-not-solved
 `2019-03` `python` 
 
-一个windows的python脚本，对比leetcode上我没有做的dp问题
+windows下python脚本，对比leetcode上我没有做的dp问题
+
+----------
+
+#### trimnewline
+`2019-02` `python` 
+
+python脚本，trim文件中的换行
 
 ----------
 

@@ -1,0 +1,278 @@
+256 
+Paint House
+48.4%   Easy    
+121 
+Best Time to Buy and Sell Stock 46.6%   Easy    
+746 
+Min Cost Climbing Stairs    46.4%   Easy    
+70  
+Climbing Stairs 43.7%   Easy    
+53  
+Maximum Subarray    43.1%   Easy    
+198 
+House Robber    40.9%   Easy    
+303 
+Range Sum Query - Immutable 37.0%   Easy    
+276 
+Paint Fence
+36.2%   Easy    
+338 
+Counting Bits   64.2%   Medium  
+750 
+Number Of Corner Rectangles
+64.0%   Medium  
+877 
+Stone Game  60.7%   Medium  
+931 
+Minimum Falling Path Sum    58.0%   Medium  
+983 
+Minimum Cost For Tickets    57.6%   Medium  
+647 
+Palindromic Substrings  56.2%   Medium  
+413 
+Arithmetic Slices   55.4%   Medium  
+712 
+Minimum ASCII Delete Sum for Two Strings    53.6%   Medium  
+651 
+4 Keys Keyboard
+50.2%   Medium  
+714 
+Best Time to Buy and Sell Stock with Transaction Fee    49.8%   Medium  
+646 
+Maximum Length of Pair Chain    48.2%   Medium  
+638 
+Shopping Offers 48.0%   Medium  
+343 
+Integer Break   47.4%   Medium  
+62  
+Unique Paths    46.8%   Medium  
+357 
+Count Numbers with Unique Digits    46.7%   Medium  
+486 
+Predict the Winner  46.7%   Medium  
+392 
+Is Subsequence  46.3%   Medium  
+650 
+2 Keys Keyboard 46.2%   Medium  
+64  
+Minimum Path Sum    46.0%   Medium  
+873 
+Length of Longest Fibonacci Subsequence 45.9%   Medium  
+516 
+Longest Palindromic Subsequence 45.8%   Medium  
+978 
+Longest Turbulent Subarray  45.8%   Medium  
+351 
+Android Unlock Patterns
+45.6%   Medium  
+96  
+Unique Binary Search Trees  45.4%   Medium  
+740 
+Delete and Earn 45.2%   Medium  
+718 
+Maximum Length of Repeated Subarray 45.1%   Medium  
+494 
+Target Sum  44.9%   Medium  
+813 
+Largest Sum of Averages 44.2%   Medium  
+377 
+Combination Sum IV  43.7%   Medium  
+309 
+Best Time to Buy and Sell Stock with Cooldown   43.6%   Medium  
+688 
+Knight Probability in Chessboard    43.3%   Medium  
+764 
+Largest Plus Sign   43.0%   Medium  
+838 
+Push Dominoes   43.0%   Medium  
+361 
+Bomb Enemy
+42.7%   Medium  
+698 
+Partition to K Equal Sum Subsets    41.6%   Medium  
+279 
+Perfect Squares 41.2%   Medium  
+300 
+Longest Increasing Subsequence  40.4%   Medium  
+416 
+Partition Equal Subset Sum  40.1%   Medium  
+474 
+Ones and Zeroes 39.5%   Medium  
+935 
+Knight Dialer   39.0%   Medium  
+120 
+Triangle    38.6%   Medium  
+375 
+Guess Number Higher or Lower II 37.4%   Medium  
+376 
+Wiggle Subsequence  37.1%   Medium  
+808 
+Soup Servings   36.3%   Medium  
+967 
+Numbers With Same Consecutive Differences   36.2%   Medium  
+264 
+Ugly Number II  35.8%   Medium  
+213 
+House Robber II 35.2%   Medium  
+790 
+Domino and Tromino Tiling   35.2%   Medium  
+95  
+Unique Binary Search Trees II   35.1%   Medium  
+139 
+Word Break  34.7%   Medium  
+368 
+Largest Divisible Subset    34.6%   Medium  
+787 
+Cheapest Flights Within K Stops 34.2%   Medium  
+801 
+Minimum Swaps To Make Sequences Increasing  34.1%   Medium  
+467 
+Unique Substrings in Wraparound String  33.5%   Medium  
+63  
+Unique Paths II 33.3%   Medium  
+673 
+Number of Longest Increasing Subsequence    33.3%   Medium  
+898 
+Bitwise ORs of Subarrays    33.2%   Medium  
+221 
+Maximal Square  32.5%   Medium  
+304 
+Range Sum Query 2D - Immutable  31.5%   Medium  
+576 
+Out of Boundary Paths   31.4%   Medium  
+418 
+Sentence Screen Fitting
+30.7%   Medium  
+837 
+New 21 Game 30.6%   Medium  
+322 
+Coin Change 29.5%   Medium  
+152 
+Maximum Product Subarray    28.7%   Medium  
+464 
+Can I Win   27.0%   Medium  
+5   
+Longest Palindromic Substring   26.8%   Medium  
+523 
+Continuous Subarray Sum 24.2%   Medium  
+91  
+Decode Ways 22.0%   Medium  
+982 
+Triples with Bitwise AND Equal To Zero  53.1%   Hard    
+960 
+Delete Columns to Make Sorted III   51.7%   Hard    
+975 
+Odd Even Jump   49.9%   Hard    
+312 
+Burst Balloons  46.6%   Hard    
+847 
+Shortest Path Visiting All Nodes    45.9%   Hard    
+471 
+Encode String with Shortest Length
+44.6%   Hard    
+689 
+Maximum Sum of 3 Non-Overlapping Subarrays  43.9%   Hard    
+920 
+Number of Music Playlists   43.0%   Hard    
+410 
+Split Array Largest Sum 41.9%   Hard    
+903 
+Valid Permutations for DI Sequence  41.9%   Hard    
+265 
+Paint House II
+41.0%   Hard    
+964 
+Least Operators to Express Number   40.5%   Hard    
+514 
+Freedom Trail   40.4%   Hard    
+940 
+Distinct Subsequences II    38.3%   Hard    
+730 
+Count Different Palindromic Subsequences    38.0%   Hard    
+568 
+Maximum Vacation Days
+37.8%   Hard    
+691 
+Stickers to Spell Word  37.8%   Hard    
+546 
+Remove Boxes    37.7%   Hard    
+956 
+Tallest Billboard   37.1%   Hard    
+72  
+Edit Distance   36.8%   Hard    
+517 
+Super Washing Machines  36.8%   Hard    
+727 
+Minimum Window Subsequence
+36.4%   Hard    
+879 
+Profitable Schemes  35.9%   Hard    
+943 
+Find the Shortest Superstring   35.8%   Hard    
+664 
+Strange Printer 35.7%   Hard    
+403 
+Frog Jump   35.6%   Hard    
+363 
+Max Sum of Rectangle No Larger Than K   34.9%   Hard    
+115 
+Distinct Subsequences   34.7%   Hard    
+818 
+Race Car    34.3%   Hard    
+968 
+Binary Tree Cameras 34.1%   Hard    
+1015    
+Numbers With Repeated Digits    33.9%   Hard    
+472 
+Concatenated Words  33.7%   Hard    
+354 
+Russian Doll Envelopes  33.6%   Hard    
+123 
+Best Time to Buy and Sell Stock III 33.1%   Hard    
+85  
+Maximal Rectangle   32.7%   Hard    
+600 
+Non-negative Integers without Consecutive Ones  32.6%   Hard    
+552 
+Student Attendance Record II    32.5%   Hard    
+87  
+Scramble String 31.2%   Hard    
+446 
+Arithmetic Slices II - Subsequence  29.9%   Hard    
+629 
+K Inverse Pairs Array   29.0%   Hard    
+741 
+Cherry Pickup   28.4%   Hard    
+871 
+Minimum Number of Refueling Stops   28.2%   Hard    
+902 
+Numbers At Most N Given Digit Set   27.9%   Hard    
+97  
+Interleaving String 27.5%   Hard    
+466 
+Count The Repetitions   27.4%   Hard    
+132 
+Palindrome Partitioning II  26.9%   Hard    
+140 
+Word Break II   26.9%   Hard    
+174 
+Dungeon Game    26.7%   Hard    
+656 
+Coin Path
+26.6%   Hard    
+1000    
+Minimum Cost to Merge Stones    26.3%   Hard    
+188 
+Best Time to Buy and Sell Stock IV  26.0%   Hard    
+321 
+Create Maximum Number   25.2%   Hard    
+10  
+Regular Expression Matching 25.1%   Hard    
+32  
+Longest Valid Parentheses   25.1%   Hard    
+639 
+Decode Ways II  24.8%   Hard    
+887 
+Super Egg Drop  24.8%   Hard    
+44  
+Wildcard Matching
