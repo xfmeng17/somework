@@ -8,13 +8,13 @@
 
 `2019-03`
 
-一个windows的python脚本，对比leetcode上我没有做的dp问题
+windows下python脚本，对比leetcode上我没有做的dp问题
 
 ----------
 
 #### python/frieze
 
- `2018-03`
+`2018-03`
 
 甲鱼的python编程练习题目
 
