@@ -4,11 +4,19 @@
 
 ----------
 
-#### python/trim-new-line
+#### python/find-id-not-solved
 
 `2019-03`
 
 windows下python脚本，对比leetcode上我没有做的dp问题
+
+----------
+
+#### python/trim-new-line
+
+`2019-03`
+
+python script on Windows, delete \n\t in the input file.
 
 ----------
 
