@@ -4,15 +4,17 @@
 
 ----------
 
-#### trimnewline
-`2019-03` `python` 
+#### python/trim-new-line
+
+`2019-03`
 
 一个windows的python脚本，对比leetcode上我没有做的dp问题
 
 ----------
 
-#### frieze
- `2018-03` `python`
+#### python/frieze
+
+ `2018-03`
 
 甲鱼的python编程练习题目
 
