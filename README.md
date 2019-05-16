@@ -4,6 +4,14 @@
 
 ----------
 
+#### python/daily-download-helper
+
+`2019-05`
+
+windows下python脚本，帮助xtcheng每日快速下载门户网站数据
+
+----------
+
 #### python/find-id-not-solved
 
 `2019-03`
