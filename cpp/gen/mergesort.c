@@ -12,14 +12,14 @@ int main(int argc, char *argv[]) {
 	}
 	
 	FILE *fp = NULL;
-	printf("argc[1] = %s\n", argv[1]);
-	if (fopen(argv[1], "r") == NULL) {
+	if ((fp = fopen(argv[1], "r")) == NULL) {
 		printf("fopen error\n");
 		return(0);
 	}
 	int N = 0;
-	fscanf(fp, "%d\n", &N);
-	printf("N = %d\n", N);
+	if (fscanf(fp, "%d\n", &N) != 1) {
+		printf("fscanf error\n");
+	}
 	if (N <= 0) {
 		printf("Empty input file with N = %d\n", N);
 		return(0);
@@ -32,14 +32,11 @@ int main(int argc, char *argv[]) {
 	fclose(fp);
 	msort(arr, aux, 0, N-1);
 
-	if (fopen("sorted.out", "w") == NULL) {
-		printf("fopen sorted.out error\n");
-		return(0);
-	}
-	fprintf(fp, "%d\n", N);
+	printf("%d\n", N);
 	for (int i = 0; i < N; i++) {
-		fprintf(fp, "%d ", arr[i]);
+		printf("%d ", arr[i]);
 	}
+	printf("\n");
 	return(0);
 }
 
