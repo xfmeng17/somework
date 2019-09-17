@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <sys/time.h>
 
 static void msort(int *arr, int *aux, int lo, int hi);
 static void merge(int *arr, int *aux, int lo, int mid, int hi);
@@ -30,8 +31,32 @@ int main(int argc, char *argv[]) {
 		fscanf(fp, "%d", &arr[i]);
 	}
 	fclose(fp);
+	
+	struct timeval tv_beg, tv_end;
+	gettimeofday(&tv_beg, NULL);
+	
 	msort(arr, aux, 0, N-1);
+	
+	gettimeofday(&tv_end, NULL);
 
+	// * output time cost to file
+	int timecost = 0;
+	timecost += tv_end.tv_sec * 1000 + tv_end.tv_usec / 1000;
+	timecost -= tv_beg.tv_sec * 1000 + tv_beg.tv_usec / 1000;
+	if ((fp = fopen("timecost.txt", "a+")) == NULL) {
+		printf("fopen timecost.txt error");
+		return(0);
+	}
+	time_t timer;
+	char buffer[26];
+	struct tm *tm_info;
+	time(&timer);
+	tm_info = localtime(&timer);
+	strftime(buffer, 26, "%Y-%m-%d %H:%M:%S", tm_info);
+	fprintf(fp, "%s | mergesort range [%d, %d] | time cost: %d ms\n", buffer, 1, N, timecost);
+	fclose(fp);
+	
+	// * output result to stdout
 	printf("%d\n", N);
 	for (int i = 0; i < N; i++) {
 		printf("%d ", arr[i]);
