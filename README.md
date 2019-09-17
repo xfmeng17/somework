@@ -8,7 +8,7 @@
 
 `2019-09`
 
-`genrn.out 1 10000` generate random number in [1, 100000] to stdout.
+`genrn.out 1 100000` generate random number in [1, 100000] to stdout.
 `mergesort.out unsorted.file` sort numbers in unsorted.file to stdout and
 record time cost into `timecost.txt`.
 
