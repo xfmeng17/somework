@@ -4,14 +4,15 @@
 
 ----------
 
-#### cpp/gen
+#### cpp/sort
 
 `2019-09`
 
 `genrn.out 1 10000` generate random number in [1, 100000] to stdout.
-`mergesort.out unsorted.file` sort numbers in unsorted.file to stdout.
+`mergesort.out unsorted.file` sort numbers in unsorted.file to stdout and
+record time cost into `timecost.txt`.
 
-I just want to pracetice merge sort.
+I just want to pracetice those sort algorithms.
 
 ----------
 
