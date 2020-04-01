@@ -1,3 +1,4 @@
+// generate random number
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -6,8 +7,7 @@ const int MIN_NUM = 1;
 const int MAX_NUM = 1000000;
 
 int main(int argc, char *argv[]) {
-	// printf("Usage: ./genrn.out min_num max_num\n");
-
+	//printf("Usage: ./genrn.out min_num max_num\n");
 	int min = 0, max = 0;
 	if (argc < 3) {
 		min = MIN_NUM;
