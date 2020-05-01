@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package tutorial;
+
+message AddressBook {
+	optional uint32 a = 1;
+}
