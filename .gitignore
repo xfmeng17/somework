@@ -5,3 +5,6 @@ __pycache__
 *.out
 *.file
 
+python/frieze/frizez.py
+python/frieze/frizez2.py
+

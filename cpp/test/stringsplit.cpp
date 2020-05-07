@@ -13,11 +13,11 @@ int main() {
   string test1 = "^901^0^1";
   string test2 = "a^b^c^d^";
 
-  vector<string> ret1 = split(test1, '^');
-  print(ret1);
+  // vector<string> ret1 = split(test1, '^');
+  // print(ret1);
 
-  vector<string> ret2 = split(test2, '^');
-  print(ret2);
+  // vector<string> ret2 = split(test2, '^');
+  // print(ret2);
 
   vector<string> ret3 = ssplit(test1, "^");
   print(ret3);
@@ -46,13 +46,16 @@ vector<string> split(string str, char del) {
 
 std::vector<std::string> ssplit(std::string text, std::string delimeter) {
   std::vector<string> ret;
+  cout << "text.length()=" << text.length() << endl;
   int lo = 0;
   int hi = 0;
   while ((hi = text.find(delimeter, lo)) < text.length()) {
     std::string item = text.substr(lo, hi - lo);
     ret.emplace_back(item);
     lo = hi + delimeter.length();
+	cout << "hi=" << hi << endl;
   }
+  cout << "hi=" << hi << endl;
   if (lo < text.length()) {
     std::string item = text.substr(lo);
     ret.emplace_back(item);
