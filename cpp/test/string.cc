@@ -12,4 +12,14 @@ int main() {
   ss << a << ", p = " << p << endl;
 
   cout << ss.str();
+
+  string n = "";
+  float f = 0.0f;
+  try {
+	f = stof(n);
+  } catch(std::exception& e) {
+	f = 0.0f;
+  }
+  cout << "f = " << f << endl;
+
 }
