@@ -13,7 +13,7 @@ class complex {
   friend istream &operator>>(istream &in, complex &A);
   friend ostream &operator<<(ostream &out, complex &A);
 
- private:
+ public:
   double m_real;  //实部
   double m_imag;  //虚部
 };
@@ -63,6 +63,11 @@ ostream &operator<<(ostream &out, complex &A) {
   ;
   return out;
 }
+ostream &operator<<(ostream &out, const complex &A) {
+  out << A.m_real << " + " << A.m_imag << " i ";
+  ;
+  return out;
+}
 
 int main() {
   complex c1, c2, c3;
@@ -80,5 +85,15 @@ int main() {
   c3 = c1 / c2;
   cout << "c1 / c2 = " << c3 << endl;
 
+  const complex c4(c3);
+  complex *p = const_cast<complex*>(&c4);
+  p->m_real = 2.33;
+  cout << "c4=" << c4 << endl;
+  cout << "*p=" << *p << endl;
+  
+  const double d4 = 0.01;
+  double *pp = const_cast<double*>(&d4);
+  *pp = 0.123;
+  cout << "d4=" << d4 << ", pp=" << *pp << endl;
   return 0;
 }

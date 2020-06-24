@@ -5,9 +5,7 @@ using namespace std;
 //秒表类
 class stopwatch {
  public:
-  stopwatch() : m_min(0), m_sec(0) {
-	cout << "stopwatch()" << endl;
-  }
+  stopwatch() : m_min(0), m_sec(0) { cout << "stopwatch()" << endl; }
 
  public:
   void setzero() {
