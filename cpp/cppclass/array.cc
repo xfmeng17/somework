@@ -57,7 +57,8 @@ bool Array<T, N>::capacity(int n) {
         m_p = pTemp;
         m_capacity = m_length + 2 * n;
         m_length = len;
-		cout << "m_capacity=" << m_capacity << ", m_length=" << m_length << ", len=" << len << endl;
+        cout << "m_capacity=" << m_capacity << ", m_length=" << m_length
+             << ", len=" << len << endl;
       }
     }
   } else {                        //收缩数组

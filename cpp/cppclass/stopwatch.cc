@@ -6,6 +6,12 @@ using namespace std;
 class stopwatch {
  public:
   stopwatch() : m_min(0), m_sec(0) { cout << "stopwatch()" << endl; }
+  stopwatch(const stopwatch &copy) {
+    m_min = copy.m_min;
+    m_sec = copy.m_sec;
+    cout << "copy() this=" << this << ",value" << *this;
+    cout << " | copy=" << &copy << ",value" << copy << endl;
+  }
 
  public:
   void setzero() {
@@ -28,6 +34,8 @@ stopwatch stopwatch::run() {
     m_min++;
     m_sec = 0;
   }
+  cout << "++m_sec" << endl;
+  cout << "run() this=" << this << endl;
   return *this;
 }
 
@@ -35,7 +43,12 @@ stopwatch stopwatch::operator++() { return run(); }
 
 stopwatch stopwatch::operator++(int n) {
   stopwatch s = *this;
+  cout << "p_this=" << this << endl;
+  cout << "p_s=" << &s << endl;
+  cout << "stopwatch s = *this" << endl;
   run();
+  cout << "i++ after run()" << endl;
+  s.m_min = 88;
   return s;
 }
 
@@ -46,15 +59,23 @@ ostream &operator<<(ostream &out, const stopwatch &s) {
 
 int main() {
   stopwatch s1, s2;
+  cout << "s1: " << s1 << " ps1: " << &s1 << endl;
+  cout << "s2: " << s2 << " ps2: " << &s2 << endl;
+  cout << endl;
 
   s1 = s2++;
-  cout << "s1: " << s1 << endl;
-  cout << "s2: " << s2 << endl;
+  cout << "s1: " << s1 << " ps1: " << &s1 << endl;
+  cout << "s2: " << s2 << " ps2: " << &s2 << endl;
   s1.setzero();
   s2.setzero();
+  cout << endl;
 
   s1 = ++s2;
-  cout << "s1: " << s1 << endl;
-  cout << "s2: " << s2 << endl;
+  cout << "s1: " << s1 << " ps1: " << &s1 << endl;
+  cout << "s2: " << s2 << " ps2: " << &s2 << endl;
   return 0;
 }
+
+// 39行return *this和52行return s都发生了拷贝
+//但是外面66行和73行的赋值，都没有发生拷贝
+//只是把临时对象内的值，赋给了外面的对象

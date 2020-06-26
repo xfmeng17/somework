@@ -86,13 +86,13 @@ int main() {
   cout << "c1 / c2 = " << c3 << endl;
 
   const complex c4(c3);
-  complex *p = const_cast<complex*>(&c4);
+  complex *p = const_cast<complex *>(&c4);
   p->m_real = 2.33;
   cout << "c4=" << c4 << endl;
   cout << "*p=" << *p << endl;
-  
+
   const double d4 = 0.01;
-  double *pp = const_cast<double*>(&d4);
+  double *pp = const_cast<double *>(&d4);
   *pp = 0.123;
   cout << "d4=" << d4 << ", pp=" << *pp << endl;
   return 0;
