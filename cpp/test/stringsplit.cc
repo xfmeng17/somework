@@ -53,7 +53,7 @@ std::vector<std::string> ssplit(std::string text, std::string delimeter) {
     std::string item = text.substr(lo, hi - lo);
     ret.emplace_back(item);
     lo = hi + delimeter.length();
-	cout << "hi=" << hi << endl;
+    cout << "hi=" << hi << endl;
   }
   cout << "hi=" << hi << endl;
   if (lo < text.length()) {
