@@ -9,12 +9,12 @@
 
 void *thread(void *arg) {
   // 设置线程名称
-  
+
   char tname[256];
   // snprintf(tname, sizeof(tname), "thread_%#x", (uint32_t)pthread_self());
   // prctl(PR_SET_NAME, tname);
   // printf("thread: '%s' run..\n", tname);
-  
+
   char np_name[16];
   snprintf(np_name, sizeof(np_name), "thread_%#x", (uint32_t)pthread_self());
   pthread_setname_np(pthread_self(), np_name);
@@ -38,8 +38,8 @@ int main(int argc, char *argv[]) {
    */
   int coredump_thread = atoi(argv[1]);
   if (coredump_thread < 0 || coredump_thread > 3) {
-	return -1;
-	}
+    return -1;
+  }
 
   // 1-3 是线程core
   std::vector<pthread_t> tids;
@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
     tids.push_back(newtid);
   }
   // 0 是进程core
-  int xxx = atoi(argv[coredump_thread-1]);
+  int xxx = atoi(argv[coredump_thread - 1]);
 
   for (uint32_t i = 0; i < tids.size(); i++) {
     pthread_t tid = tids[i];
