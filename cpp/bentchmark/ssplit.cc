@@ -7,14 +7,14 @@
 using namespace std;
 
 const string s =
-    "https://es-h7jpiub2.kibana.tencentelasticsearch.com:5601/app/kibana#/"
+    "https://es-asdfasdfasdf.kibana.qwertyujnhfgdvsxdn.com:9200/app/kibana#/"
     "discover?_g=()&_a=(columns:!(_source),filters:!(('$state':(store:appState)"
     ",meta:(alias:!n,disabled:!f,index:e2420580-b437-11ea-9d17-57bcf81685db,"
     "key:type,negate:!f,params:(query:MISS_FEATURE_INFO,type:phrase),type:"
     "phrase,value:MISS_FEATURE_INFO),query:(match:(type:(query:MISS_FEATURE_"
     "INFO,type:phrase))))),index:e2420580-b437-11ea-9d17-57bcf81685db,interval:"
     "auto,query:(language:lucene,query:''),sort:!('@timestamp',desc))https://"
-    "es-h7jpiub2.kibana.tencentelasticsearch.com:5601/app/kibana#/dashboard/"
+    "es-asdfasdfasdf.kibana.qwertyujnhfgdvsxdn.com:9200/app/kibana#/dashboard/"
     "50929f70-0f53-11ea-b747-998ea9e2cdb2?_g=()&_a=(description:'',filters:!(),"
     "fullScreenMode:!f,options:(darkTheme:!f,hidePanelTitles:!f,useMargins:!t),"
     "panels:!((embeddableConfig:(),gridData:(h:31,i:'1',w:48,x:0,y:8),id:'"
@@ -23,7 +23,7 @@ const string s =
     "id:'08871a10-0f55-11ea-b747-998ea9e2cdb2',panelIndex:'2',type:"
     "visualization,version:'6.4.2')),query:(language:lucene,query:''),"
     "timeRestore:!t,title:%E9%87%87%E6%A0%B7%E7%94%BB%E5%83%8F%E5%88%97%E8%A1%"
-    "A8,viewMode:view)https://es-h7jpiub2.kibana.tencentelasticsearch.com:5601/"
+    "A8,viewMode:view)https://eseszxcvbnm.kibana.qwertyujnhfgdvsxdn.com:9200/"
     "app/kibana#/dashboard/"
     "a0b4c6f0-1196-11ea-b747-998ea9e2cdb2?_g=()&_a=(description:'',filters:!(),"
     "fullScreenMode:!f,options:(darkTheme:!f,hidePanelTitles:!f,useMargins:!t),"
@@ -58,13 +58,13 @@ static void sfind_string_split(const string& s, const string& c,
 }
 static void sfind(benchmark::State& state) {
   for (auto _ : state) {
-  vector<string> v1, v2, v3;
-  sfind_string_split(s, ":", v1);
-  sfind_string_split(s, "8", v2);
-  sfind_string_split(s, "(", v3);
-  //cerr << "sfind v1.size=" << v1.size() << endl;
-  //cerr << "sfind v2.size=" << v2.size() << endl;
-  //cerr << "sfind v3.size=" << v3.size() << endl;
+    vector<string> v1, v2, v3;
+    sfind_string_split(s, ":", v1);
+    sfind_string_split(s, "8", v2);
+    sfind_string_split(s, "(", v3);
+    // cerr << "sfind v1.size=" << v1.size() << endl;
+    // cerr << "sfind v2.size=" << v2.size() << endl;
+    // cerr << "sfind v3.size=" << v3.size() << endl;
   }
 }
 BENCHMARK(sfind);
@@ -75,13 +75,13 @@ static void boost_string_split(const string& s, const string& c,
 }
 static void bspit(benchmark::State& state) {
   for (auto _ : state) {
-  vector<string> v1, v2, v3;
-  boost_string_split(s, ":", v1);
-  boost_string_split(s, "8", v2);
-  boost_string_split(s, "(", v3);
-  //cerr << "bspit v1.size=" << v1.size() << endl;
-  //cerr << "bspit v2.size=" << v2.size() << endl;
-  //cerr << "bspit v3.size=" << v3.size() << endl;
+    vector<string> v1, v2, v3;
+    boost_string_split(s, ":", v1);
+    boost_string_split(s, "8", v2);
+    boost_string_split(s, "(", v3);
+    // cerr << "bspit v1.size=" << v1.size() << endl;
+    // cerr << "bspit v2.size=" << v2.size() << endl;
+    // cerr << "bspit v3.size=" << v3.size() << endl;
   }
 }
 BENCHMARK(bspit);
