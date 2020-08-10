@@ -36,6 +36,7 @@ int func(vector<int>& inputs, int N, int K) {
 
 int func1(vector<int>& inputs, int N, int K) {
 	sort(inputs.begin(), inputs.end());
+	//TODO binery search optimize
 	for (int i = N/K; i >= 1; i--) {
 		if (helper1(inputs, N, i, K)) {
 			return i * K;
