@@ -49,7 +49,7 @@ int main() {
        cin >> n;
        inputs.emplace_back(n);
     }
-    cout << func(inputs, N, K) << endl;
+    cout << func(inputs, N, K) * K << endl;
   }
 
   return 0;
