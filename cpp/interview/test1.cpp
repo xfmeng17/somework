@@ -16,8 +16,8 @@ int func(vector<int> inputs, int N, int K) {
 			seg[seg.size()-1]++;
 		} else {
 			seg.emplace_back(1);
+			cur = inputs[i];
 		}
-		cur = inputs[i];
 	}
 
 	for (int i = N/K; i >= 1; i--) {
