@@ -38,7 +38,7 @@ int func1(vector<int>& inputs, int N, int K) {
 	sort(inputs.begin(), inputs.end());
 	//TODO binery search optimize
 	for (int i = N/K; i >= 1; i--) {
-		if (helper1(inputs, N, i, K)) {
+		if (helper2(inputs, N, i, K)) {
 			return i * K;
 		}
 	}
@@ -50,28 +50,30 @@ bool helper1(vector<int>& inputs, int N, int size, int num) {
 		return num <= inputs.size();
 	}
 
-	int cnt_num = 0;
-	int cnt_size = 0;
-	int curr = -1;
+	int final_num = 0;
+	int curr_size = 0;
+	int curr_index = -1;
 	for (int i = 0; i < inputs.size(); i++) {
-		if (cnt_size == 0) {
-			cnt_size = 1;
-			curr = inputs[i];
+		if (curr_size == 0) {
+			curr_size = 1;
+			curr_index = i;
 			continue;
 		}
-		if (inputs[i] - curr <= 2) {
-			if (cnt_size + 1 == size) {
-				cnt_size = 0;
-				cnt_num++;
-			} else {
-				cnt_size++;
+
+		if (inputs[i] - inputs[curr_index] <= 2) {
+			curr_size++;
+			if (curr_size == size) {
+				final_num++;
+				curr_size = 0;
+				curr_index = i;
 			}
 		} else {
-			cnt_size = 1;
-			curr = inputs[i];
+			curr_size = 0;
+			i = curr_index;
 		}
 	}
-	return cnt_num >= num;
+
+	return final_num >= num;
 }
 
 int main() {
