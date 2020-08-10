@@ -5,7 +5,93 @@
 
 using namespace std;
 
-bool helper1(vector<int>& inputs, int N, int size, int num);
+int func(vector<int>& inputs, int N, int K);
+int func1(vector<int>& inputs, int N, int K);
+bool helper1(vector<int>& inputs, int N, int K, int len);
+bool helper2(vector<int>& inputs, int N, int K, int len);
+
+int main() {
+  int T = 0;
+  cin >> T;
+  while (T-- > 0) {
+    int N = 0, K = 0;
+    vector<int> inputs;
+    cin >> N >> K;
+    if (N <= 0 || K <= 0) {
+        cout << -1 << endl;
+        continue;
+    }
+    for (int i = 0; i < N; i++) {
+       int n = 0;
+       cin >> n;
+       inputs.emplace_back(n);
+    }
+    // cout << func(inputs, N, K) << endl;
+    cout << func1(inputs, N, K) << endl;
+  }
+
+  return 0;
+}
+
+int func1(vector<int>& inputs, int N, int K) {
+	sort(inputs.begin(), inputs.end());
+	//TODO binery search optimize
+	for (int i = N/K; i >= 1; i--) {
+		if (helper2(inputs, N, i, K)) {
+			return i * K;
+		}
+	}
+	return -1;
+}
+
+bool helper1(vector<int>& inputs, int N, int K, int len) {
+	if (len <= 1) {
+		return K <= N;
+	}
+
+	int final_num = 0;
+	int curr_len = 0;
+	int curr_idx = -1;
+	for (int i = 0; i < inputs.size(); i++) {
+		if (curr_len == 0) {
+			curr_len = 1;
+			curr_idx = i;
+			continue;
+		}
+
+		if (inputs[i] - inputs[curr_idx] <= 2) {
+			curr_len++;
+			if (curr_len == len) {
+				final_num++;
+				curr_len = 0;
+				curr_idx = i;
+			}
+		} else {
+			curr_len = 0;
+			i = curr_idx;
+		}
+	}
+
+	return final_num >= K;
+}
+
+bool helper2(vector<int>& inputs, int N, int K, int len) {
+	if (len <= 1) {
+		return K <= N;
+	}
+	int final_num = 0;
+	int i = 0;
+	while (i + len <= inputs.size()) {
+		if (inputs[i+len-1] - inputs[i] <= 2) {
+			final_num++;
+			i += len;
+		} else {
+			i += 1;
+		}
+	}
+	return final_num >= K;
+}
+
 
 int func(vector<int>& inputs, int N, int K) {
 	sort(inputs.begin(), inputs.end());
@@ -32,69 +118,4 @@ int func(vector<int>& inputs, int N, int K) {
 		}
 	}
 	return -1;
-}
-
-int func1(vector<int>& inputs, int N, int K) {
-	sort(inputs.begin(), inputs.end());
-	//TODO binery search optimize
-	for (int i = N/K; i >= 1; i--) {
-		if (helper2(inputs, N, i, K)) {
-			return i * K;
-		}
-	}
-	return -1;
-}
-
-bool helper1(vector<int>& inputs, int N, int size, int num) {
-	if (size <= 1) {
-		return num <= inputs.size();
-	}
-
-	int final_num = 0;
-	int curr_size = 0;
-	int curr_index = -1;
-	for (int i = 0; i < inputs.size(); i++) {
-		if (curr_size == 0) {
-			curr_size = 1;
-			curr_index = i;
-			continue;
-		}
-
-		if (inputs[i] - inputs[curr_index] <= 2) {
-			curr_size++;
-			if (curr_size == size) {
-				final_num++;
-				curr_size = 0;
-				curr_index = i;
-			}
-		} else {
-			curr_size = 0;
-			i = curr_index;
-		}
-	}
-
-	return final_num >= num;
-}
-
-int main() {
-  int T = 0;
-  cin >> T;
-  while (T-- > 0) {
-    int N = 0, K = 0;
-    vector<int> inputs;
-    cin >> N >> K;
-    if (N <= 0 || K <= 0) {
-        cout << -1 << endl;
-        continue;
-    }
-    for (int i = 0; i < N; i++) {
-       int n = 0;
-       cin >> n;
-       inputs.emplace_back(n);
-    }
-    // cout << func(inputs, N, K) << endl;
-    cout << func1(inputs, N, K) << endl;
-  }
-
-  return 0;
 }
