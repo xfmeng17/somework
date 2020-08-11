@@ -6,9 +6,12 @@
 using namespace std;
 
 int func(vector<int>& inputs, int N, int K);
+
 int func1(vector<int>& inputs, int N, int K);
-bool helper1(vector<int>& inputs, int N, int K, int len);
-bool helper2(vector<int>& inputs, int N, int K, int len);
+bool check1(vector<int>& inputs, int N, int K, int len);
+
+int func2(vector<int>& inputs, int N, int K);
+bool check2(vector<int>& inputs, int N, int K, int len);
 
 int main() {
   int T = 0;
@@ -27,7 +30,9 @@ int main() {
       inputs.emplace_back(n);
     }
     // cout << func(inputs, N, K) << endl;
-    cout << func1(inputs, N, K) << endl;
+    cout << "func1(): " << func1(inputs, N, K) << endl;
+    cout << "func2(): " << func2(inputs, N, K) << endl;
+    cout << "========" << endl;
   }
 
   return 0;
@@ -37,14 +42,14 @@ int func1(vector<int>& inputs, int N, int K) {
   sort(inputs.begin(), inputs.end());
   // TODO binery search optimize
   for (int i = N / K; i >= 1; i--) {
-    if (helper2(inputs, N, i, K)) {
+    if (check1(inputs, N, K, i)) {
       return i * K;
     }
   }
   return -1;
 }
 
-bool helper1(vector<int>& inputs, int N, int K, int len) {
+bool check1(vector<int>& inputs, int N, int K, int len) {
   if (len <= 1) {
     return K <= N;
   }
@@ -75,7 +80,34 @@ bool helper1(vector<int>& inputs, int N, int K, int len) {
   return final_num >= K;
 }
 
-bool helper2(vector<int>& inputs, int N, int K, int len) {
+int func2(vector<int>& inputs, int N, int K) {
+  sort(inputs.begin(), inputs.end());
+  int lo = 1;
+  int hi = N / K;
+  int mid = (lo + hi) / 2;
+  while (lo <= hi) {
+    if (check2(inputs, N, K, mid)) {
+      lo = mid + 1;
+    } else {
+      hi = mid - 1;
+    }
+    mid = (lo + hi) / 2;
+  }
+  if (lo <= N / K && check2(inputs, N, K, lo)) {
+    return lo * K;
+  }
+  if (hi >= 1 && check2(inputs, N, K, hi)) {
+    return hi * K;
+  }
+
+  // for (int i = N / K; i >= 1; i--) {
+  //   if (check2(inputs, N, K, i)) {
+  //     return i * K;
+  //   }
+  // }
+  return -1;
+}
+bool check2(vector<int>& inputs, int N, int K, int len) {
   if (len <= 1) {
     return K <= N;
   }
@@ -91,7 +123,7 @@ bool helper2(vector<int>& inputs, int N, int K, int len) {
   }
   return final_num >= K;
 }
-
+// Error solution
 int func(vector<int>& inputs, int N, int K) {
   sort(inputs.begin(), inputs.end());
   vector<int> seg;
