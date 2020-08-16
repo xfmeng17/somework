@@ -1,4 +1,5 @@
-#include <boost/thread/thread.hpp>  //包含boost头文件
+//包含boost头文件
+#include <boost/thread/thread.hpp>
 #include <cstdlib>
 #include <iostream>
 using namespace std;
