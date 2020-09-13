@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -27,6 +28,7 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 }  // namespace
 
 
+void protobuf_AssignDesc_test_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_test_2eproto() {
   protobuf_AddDesc_test_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -34,20 +36,21 @@ void protobuf_AssignDesc_test_2eproto() {
       "test.proto");
   GOOGLE_CHECK(file != NULL);
   AddressBook_descriptor_ = file->message_type(0);
-  static const int AddressBook_offsets_[1] = {
+  static const int AddressBook_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AddressBook, a_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AddressBook, uniq_id_),
   };
   AddressBook_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       AddressBook_descriptor_,
       AddressBook::default_instance_,
       AddressBook_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AddressBook, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AddressBook, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(AddressBook));
+      -1,
+      sizeof(AddressBook),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AddressBook, _internal_metadata_),
+      -1);
 }
 
 namespace {
@@ -58,10 +61,11 @@ inline void protobuf_AssignDescriptorsOnce() {
                  &protobuf_AssignDesc_test_2eproto);
 }
 
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    AddressBook_descriptor_, &AddressBook::default_instance());
+      AddressBook_descriptor_, &AddressBook::default_instance());
 }
 
 }  // namespace
@@ -71,6 +75,7 @@ void protobuf_ShutdownFile_test_2eproto() {
   delete AddressBook_reflection_;
 }
 
+void protobuf_AddDesc_test_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AddDesc_test_2eproto() {
   static bool already_here = false;
   if (already_here) return;
@@ -78,8 +83,8 @@ void protobuf_AddDesc_test_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\ntest.proto\022\010tutorial\"\030\n\013AddressBook\022\t\n"
-    "\001a\030\001 \001(\r", 48);
+    "\n\ntest.proto\022\010tutorial\")\n\013AddressBook\022\t\n"
+    "\001a\030\001 \001(\r\022\017\n\007uniq_id\030\002 \001(\004", 65);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "test.proto", &protobuf_RegisterTypes);
   AddressBook::default_instance_ = new AddressBook();
@@ -96,12 +101,13 @@ struct StaticDescriptorInitializer_test_2eproto {
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int AddressBook::kAFieldNumber;
-#endif  // !_MSC_VER
+const int AddressBook::kUniqIdFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 AddressBook::AddressBook()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:tutorial.AddressBook)
 }
@@ -110,7 +116,8 @@ void AddressBook::InitAsDefaultInstance() {
 }
 
 AddressBook::AddressBook(const AddressBook& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:tutorial.AddressBook)
@@ -119,6 +126,7 @@ AddressBook::AddressBook(const AddressBook& from)
 void AddressBook::SharedCtor() {
   _cached_size_ = 0;
   a_ = 0u;
+  uniq_id_ = GOOGLE_ULONGLONG(0);
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -149,19 +157,46 @@ const AddressBook& AddressBook::default_instance() {
 
 AddressBook* AddressBook::default_instance_ = NULL;
 
-AddressBook* AddressBook::New() const {
-  return new AddressBook;
+AddressBook* AddressBook::New(::google::protobuf::Arena* arena) const {
+  AddressBook* n = new AddressBook;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void AddressBook::Clear() {
-  a_ = 0u;
+// @@protoc_insertion_point(message_clear_start:tutorial.AddressBook)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(AddressBook, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<AddressBook*>(16)->f)
+#endif
+
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
+
+  ZR_(uniq_id_, a_);
+
+#undef ZR_HELPER_
+#undef ZR_
+
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool AddressBook::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:tutorial.AddressBook)
   for (;;) {
@@ -176,6 +211,21 @@ bool AddressBook::MergePartialFromCodedStream(
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
                  input, &a_)));
           set_has_a();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_uniq_id;
+        break;
+      }
+
+      // optional uint64 uniq_id = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_uniq_id:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
+                 input, &uniq_id_)));
+          set_has_uniq_id();
         } else {
           goto handle_unusual;
         }
@@ -213,22 +263,32 @@ void AddressBook::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->a(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  // optional uint64 uniq_id = 2;
+  if (has_uniq_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(2, this->uniq_id(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:tutorial.AddressBook)
 }
 
-::google::protobuf::uint8* AddressBook::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* AddressBook::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:tutorial.AddressBook)
   // optional uint32 a = 1;
   if (has_a()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->a(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  // optional uint64 uniq_id = 2;
+  if (has_uniq_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(2, this->uniq_id(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -237,9 +297,10 @@ void AddressBook::SerializeWithCachedSizes(
 }
 
 int AddressBook::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:tutorial.AddressBook)
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 3u) {
     // optional uint32 a = 1;
     if (has_a()) {
       total_size += 1 +
@@ -247,8 +308,15 @@ int AddressBook::ByteSize() const {
           this->a());
     }
 
+    // optional uint64 uniq_id = 2;
+    if (has_uniq_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt64Size(
+          this->uniq_id());
+    }
+
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -260,34 +328,49 @@ int AddressBook::ByteSize() const {
 }
 
 void AddressBook::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const AddressBook* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const AddressBook*>(
-      &from);
+// @@protoc_insertion_point(generalized_merge_from_start:tutorial.AddressBook)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  const AddressBook* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const AddressBook>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tutorial.AddressBook)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:tutorial.AddressBook)
     MergeFrom(*source);
   }
 }
 
 void AddressBook::MergeFrom(const AddressBook& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:tutorial.AddressBook)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_a()) {
       set_a(from.a());
     }
+    if (from.has_uniq_id()) {
+      set_uniq_id(from.uniq_id());
+    }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void AddressBook::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:tutorial.AddressBook)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void AddressBook::CopyFrom(const AddressBook& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:tutorial.AddressBook)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -299,12 +382,15 @@ bool AddressBook::IsInitialized() const {
 }
 
 void AddressBook::Swap(AddressBook* other) {
-  if (other != this) {
-    std::swap(a_, other->a_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void AddressBook::InternalSwap(AddressBook* other) {
+  std::swap(a_, other->a_);
+  std::swap(uniq_id_, other->uniq_id_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata AddressBook::GetMetadata() const {
@@ -315,6 +401,58 @@ void AddressBook::Swap(AddressBook* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// AddressBook
+
+// optional uint32 a = 1;
+bool AddressBook::has_a() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void AddressBook::set_has_a() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void AddressBook::clear_has_a() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void AddressBook::clear_a() {
+  a_ = 0u;
+  clear_has_a();
+}
+ ::google::protobuf::uint32 AddressBook::a() const {
+  // @@protoc_insertion_point(field_get:tutorial.AddressBook.a)
+  return a_;
+}
+ void AddressBook::set_a(::google::protobuf::uint32 value) {
+  set_has_a();
+  a_ = value;
+  // @@protoc_insertion_point(field_set:tutorial.AddressBook.a)
+}
+
+// optional uint64 uniq_id = 2;
+bool AddressBook::has_uniq_id() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void AddressBook::set_has_uniq_id() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void AddressBook::clear_has_uniq_id() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void AddressBook::clear_uniq_id() {
+  uniq_id_ = GOOGLE_ULONGLONG(0);
+  clear_has_uniq_id();
+}
+ ::google::protobuf::uint64 AddressBook::uniq_id() const {
+  // @@protoc_insertion_point(field_get:tutorial.AddressBook.uniq_id)
+  return uniq_id_;
+}
+ void AddressBook::set_uniq_id(::google::protobuf::uint64 value) {
+  set_has_uniq_id();
+  uniq_id_ = value;
+  // @@protoc_insertion_point(field_set:tutorial.AddressBook.uniq_id)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

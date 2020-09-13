@@ -9,6 +9,7 @@ using namespace std;
 int main() {
 	tutorial::AddressBook ab;
 	ab.set_a(10);
+	ab.set_uniq_id(0);
 	cout << ab.Utf8DebugString();
 	
 	string ab_str = "";

@@ -4,4 +4,6 @@ package tutorial;
 
 message AddressBook {
 	optional uint32 a = 1;
+	optional uint64 uniq_id = 2;
+
 }
