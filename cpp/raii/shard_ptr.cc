@@ -21,12 +21,12 @@ int main() {
 
   // std::shared_ptr<int> ptr = p;这样赋值是错误的额,只要是智能指针,
   // 这样直接用=赋值是有问题的必须std::shared_ptr<int> ptr(p);
-  shared_ptr<int> ptr(p);
+  shared_ptr<int> ptr0(p);
   shared_ptr<int> ptr1 = make_shared<int>(15);
   shared_ptr<int> ptr2(ptr1);
 
-  std::cout << "ptr.use_count() is:" << ptr.use_count() << "  *ptr is:" << *ptr
-            << std::endl;
+  std::cout << "ptr0.use_count() is:" << ptr0.use_count()
+            << "  *ptr0 is:" << *ptr0 << std::endl;
   std::cout << "ptr1.use_count() is:" << ptr1.use_count()
             << "  *ptr1 is:" << *ptr1 << std::endl;
   std::cout << "ptr2.use_count() is:" << ptr2.use_count()
@@ -38,15 +38,15 @@ int main() {
   // std::cout << "ptr2.use_count() is:" << ptr2.use_count() << "*ptr2 is:" <<
   // *ptr2 << std::endl;
   std::cout << "ptr1.use_count() is:" << ptr1.use_count()
-            << "   *ptr1 is:" << *ptr1 << std::endl;
+            << "  *ptr1 is:" << *ptr1 << std::endl;
   Student *stu = new Student();
-  shared_ptr<Student> ptr_stu(stu);
+  shared_ptr<Student> ptr_stu_0(stu);
   string name = "test";
-  ptr_stu->setName(name);
-  string result = ptr_stu->getName();
+  ptr_stu_0->setName(name);
+  string result = ptr_stu_0->getName();
   std::shared_ptr<Student> ptr_stu_1;
-  ptr_stu_1 = ptr_stu;
-  cout << "ptr_stu.use_count() is:" << ptr_stu.use_count() << endl;
+  ptr_stu_1 = ptr_stu_0;
+  cout << "ptr_stu_0.use_count() is:" << ptr_stu_0.use_count() << endl;
   cout << "my name is:" << result << endl;
   return 0;
 }

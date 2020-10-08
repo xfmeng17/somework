@@ -22,7 +22,7 @@ static void PthreadCall(const char* label, int result) {
   if (result != 0) {
     fprintf(stderr, "pthread %s: %s\n", label, strerror(result));
   } else {
-	printf("%s\n", label);
+    printf("%s\n", label);
   }
 }
 Mutex::Mutex() { PthreadCall("init mutex", pthread_mutex_init(&mu_, NULL)); }
