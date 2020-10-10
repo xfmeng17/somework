@@ -10,12 +10,12 @@ int main() {
   auto f2 = [&]() { a = 2; };
   f2();
   std::cout << a << std::endl;
-  
+
   auto f3 = [&] { a = 3; };
   f3();
   std::cout << a << std::endl;
-  
-  auto f4 = [=]mutable { a = 4; };
+
+  auto f4 = [=] mutable { a = 4; };
   f4();
   std::cout << a << std::endl;
 }
