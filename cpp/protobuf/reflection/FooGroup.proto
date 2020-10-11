@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package tutorial;
+
+message Feature {
+	 string key = 1;
+	 string val = 2;
+}
+
+message FooGroup {
+	Feature foo = 1;
+	Feature bar = 2;
+	Feature baz = 3;
+}
+
+
