@@ -203,8 +203,8 @@ int main() {
   {
     tutorial::Person person;
     parse_message(serialized_string, &person);
-	cout << endl;
-	cout << "person.DebugString():\n" << person.DebugString() << endl;
+    cout << endl;
+    cout << "person.DebugString():\n" << person.DebugString() << endl;
   }
 
   return 0;
