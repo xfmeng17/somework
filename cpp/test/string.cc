@@ -21,4 +21,7 @@ int main() {
     f = 0.0f;
   }
   cout << "f = " << f << endl;
+
+  string x = {};
+  cout << "x=" << x << endl;
 }

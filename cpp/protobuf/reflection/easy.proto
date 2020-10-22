@@ -1,0 +1,6 @@
+package test;
+
+message helloworld
+{
+	required int32 egg = 1;
+}
