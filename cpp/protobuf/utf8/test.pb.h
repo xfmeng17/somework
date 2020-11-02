@@ -122,13 +122,13 @@ class test : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::std::string* release_s2();
   void set_allocated_s2(::std::string* s2);
 
-  // optional string s3 = 3;
+  // optional bytes s3 = 3;
   void clear_s3();
   static const int kS3FieldNumber = 3;
   const ::std::string& s3() const;
   void set_s3(const ::std::string& value);
   void set_s3(const char* value);
-  void set_s3(const char* value, size_t size);
+  void set_s3(const void* value, size_t size);
   ::std::string* mutable_s3();
   ::std::string* release_s3();
   void set_allocated_s3(::std::string* s3);
@@ -245,7 +245,7 @@ inline void test::set_allocated_s2(::std::string* s2) {
   // @@protoc_insertion_point(field_set_allocated:utf8.test.s2)
 }
 
-// optional string s3 = 3;
+// optional bytes s3 = 3;
 inline void test::clear_s3() {
   s3_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -263,7 +263,7 @@ inline void test::set_s3(const char* value) {
   s3_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:utf8.test.s3)
 }
-inline void test::set_s3(const char* value, size_t size) {
+inline void test::set_s3(const void* value, size_t size) {
   
   s3_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));

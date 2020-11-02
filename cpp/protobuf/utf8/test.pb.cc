@@ -85,7 +85,7 @@ void protobuf_AddDesc_test_2eproto() {
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\ntest.proto\022\004utf8\"*\n\004test\022\n\n\002s1\030\001 \001(\t\022\n"
-    "\n\002s2\030\002 \001(\t\022\n\n\002s3\030\003 \001(\tb\006proto3", 70);
+    "\n\002s2\030\002 \001(\t\022\n\n\002s3\030\003 \001(\014b\006proto3", 70);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "test.proto", &protobuf_RegisterTypes);
   test::default_instance_ = new test();
@@ -223,16 +223,12 @@ bool test::MergePartialFromCodedStream(
         break;
       }
 
-      // optional string s3 = 3;
+      // optional bytes s3 = 3;
       case 3: {
         if (tag == 26) {
          parse_s3:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
                 input, this->mutable_s3()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->s3().data(), this->s3().length(),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "utf8.test.s3"));
         } else {
           goto handle_unusual;
         }
@@ -284,13 +280,9 @@ void test::SerializeWithCachedSizes(
       2, this->s2(), output);
   }
 
-  // optional string s3 = 3;
+  // optional bytes s3 = 3;
   if (this->s3().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->s3().data(), this->s3().length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "utf8.test.s3");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
       3, this->s3(), output);
   }
 
@@ -322,14 +314,10 @@ void test::SerializeWithCachedSizes(
         2, this->s2(), target);
   }
 
-  // optional string s3 = 3;
+  // optional bytes s3 = 3;
   if (this->s3().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->s3().data(), this->s3().length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "utf8.test.s3");
     target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
         3, this->s3(), target);
   }
 
@@ -355,10 +343,10 @@ int test::ByteSize() const {
         this->s2());
   }
 
-  // optional string s3 = 3;
+  // optional bytes s3 = 3;
   if (this->s3().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
+      ::google::protobuf::internal::WireFormatLite::BytesSize(
         this->s3());
   }
 
@@ -534,7 +522,7 @@ void test::clear_s2() {
   // @@protoc_insertion_point(field_set_allocated:utf8.test.s2)
 }
 
-// optional string s3 = 3;
+// optional bytes s3 = 3;
 void test::clear_s3() {
   s3_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -552,7 +540,7 @@ void test::clear_s3() {
   s3_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:utf8.test.s3)
 }
- void test::set_s3(const char* value, size_t size) {
+ void test::set_s3(const void* value, size_t size) {
   
   s3_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
