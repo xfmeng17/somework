@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# https://www.cnblogs.com/chengd/p/7808336.html
+# linux中fork, source和exec的区别
+
 A=1
 
 echo "before exec/source/fork: PID for 1.sh = $$"
