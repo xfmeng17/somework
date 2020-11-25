@@ -1,5 +1,9 @@
+// build:
+// ./build.sh ssplit.cc ssplit
+
 #include <iostream>
 #include <vector>
+#include <string_view>
 
 #include <benchmark/benchmark.h>
 #include <boost/algorithm/string.hpp>
@@ -10,6 +14,7 @@ const string s =
     "https://es-asdfasdfasdf.kibana.qwertyujnhfgdvsxdn.com:9200/app/kibana#/"
     "discover?_g=()&_a=(columns:!(_source),filters:!(('$state':(store:appState)"
     ",meta:(alias:!n,disabled:!f,index:e2420580-b437-11ea-9d17-57bcf81685db,"
+    "key:type,negate:!f,params:(query:MISS_FEATURE_INFO,type:phrase),type:"
     "key:type,negate:!f,params:(query:MISS_FEATURE_INFO,type:phrase),type:"
     "phrase,value:MISS_FEATURE_INFO),query:(match:(type:(query:MISS_FEATURE_"
     "INFO,type:phrase))))),index:e2420580-b437-11ea-9d17-57bcf81685db,interval:"
@@ -24,6 +29,57 @@ const string s =
     "visualization,version:'6.4.2')),query:(language:lucene,query:''),"
     "timeRestore:!t,title:%E9%87%87%E6%A0%B7%E7%94%BB%E5%83%8F%E5%88%97%E8%A1%"
     "A8,viewMode:view)https://eseszxcvbnm.kibana.qwertyujnhfgdvsxdn.com:9200/"
+    "22510a20-0f53-11ea-b747-998ea9e2cdb2',panelIndex:'1',type:visualization,"
+    "version:'6.4.2'),(embeddableConfig:(),gridData:(h:8,i:'2',w:48,x:0,y:0),"
+    "id:'08871a10-0f55-11ea-b747-998ea9e2cdb2',panelIndex:'2',type:"
+    "visualization,version:'6.4.2')),query:(language:lucene,query:''),"
+    "timeRestore:!t,title:%E9%87%87%E6%A0%B7%E7%94%BB%E5%83%8F%E5%88%97%E8%A1%"
+    "A8,viewMode:view)https://eseszxcvbnm.kibana.qwertyujnhfgdvsxdn.com:9200/"
+    "app/kibana#/dashboard/"
+    "a0b4c6f0-1196-11ea-b747-998ea9e2cdb2?_g=()&_a=(description:'',filters:!(),"
+    "fullScreenMode:!f,options:(darkTheme:!f,hidePanelTitles:!f,useMargins:!t),"
+    "panels:!((embeddableConfig:(),gridData:(h:20,i:'2',w:48,x:0,y:69),id:"
+    "e44d9040-1191-11ea-b747-998ea9e2cdb2,panelIndex:'2',title:'local%20cp',"
+    "type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:20,i:"
+    "'3',w:48,x:0,y:49),id:'22d10d30-1190-11ea-b747-998ea9e2cdb2',panelIndex:'"
+    "3',title:'local%20tag',type:visualization,version:'6.4.2'),("
+    "embeddableConfig:(),gridData:(h:9,i:'5',w:48,x:0,y:0),id:'08871a10-0f55-"
+    "11ea-b747-998ea9e2cdb2',panelIndex:'5',type:visualization,version:'6.4.2')"
+    ",(embeddableConfig:(),gridData:(h:20,i:'6',w:48,x:0,y:9),id:'1fb2b5f0-"
+    "89d0-11ea-9d17-57bcf81685db',panelIndex:'6',title:'local%20ca1',type:"
+    "phrase,value:MISS_FEATURE_INFO),query:(match:(type:(query:MISS_FEATURE_"
+    "INFO,type:phrase))))),index:e2420580-b437-11ea-9d17-57bcf81685db,interval:"
+    "auto,query:(language:lucene,query:''),sort:!('@timestamp',desc))https://"
+    "es-asdfasdfasdf.kibana.qwertyujnhfgdvsxdn.com:9200/app/kibana#/dashboard/"
+    "50929f70-0f53-11ea-b747-998ea9e2cdb2?_g=()&_a=(description:'',filters:!(),"
+    "fullScreenMode:!f,options:(darkTheme:!f,hidePanelTitles:!f,useMargins:!t),"
+    "panels:!((embeddableConfig:(),gridData:(h:31,i:'1',w:48,x:0,y:8),id:'"
+    "22510a20-0f53-11ea-b747-998ea9e2cdb2',panelIndex:'1',type:visualization,"
+    "version:'6.4.2'),(embeddableConfig:(),gridData:(h:8,i:'2',w:48,x:0,y:0),"
+    "id:'08871a10-0f55-11ea-b747-998ea9e2cdb2',panelIndex:'2',type:"
+    "visualization,version:'6.4.2')),query:(language:lucene,query:''),"
+    "timeRestore:!t,title:%E9%87%87%E6%A0%B7%E7%94%BB%E5%83%8F%E5%88%97%E8%A1%"
+    "A8,viewMode:view)https://eseszxcvbnm.kibana.qwertyujnhfgdvsxdn.com:9200/"
+    "22510a20-0f53-11ea-b747-998ea9e2cdb2',panelIndex:'1',type:visualization,"
+    "version:'6.4.2'),(embeddableConfig:(),gridData:(h:8,i:'2',w:48,x:0,y:0),"
+    "id:'08871a10-0f55-11ea-b747-998ea9e2cdb2',panelIndex:'2',type:"
+    "visualization,version:'6.4.2')),query:(language:lucene,query:''),"
+    "timeRestore:!t,title:%E9%87%87%E6%A0%B7%E7%94%BB%E5%83%8F%E5%88%97%E8%A1%"
+    "A8,viewMode:view)https://eseszxcvbnm.kibana.qwertyujnhfgdvsxdn.com:9200/"
+    "app/kibana#/dashboard/"
+    "a0b4c6f0-1196-11ea-b747-998ea9e2cdb2?_g=()&_a=(description:'',filters:!(),"
+    "fullScreenMode:!f,options:(darkTheme:!f,hidePanelTitles:!f,useMargins:!t),"
+    "panels:!((embeddableConfig:(),gridData:(h:20,i:'2',w:48,x:0,y:69),id:"
+    "e44d9040-1191-11ea-b747-998ea9e2cdb2,panelIndex:'2',title:'local%20cp',"
+    "type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:20,i:"
+    "'3',w:48,x:0,y:49),id:'22d10d30-1190-11ea-b747-998ea9e2cdb2',panelIndex:'"
+    "3',title:'local%20tag',type:visualization,version:'6.4.2'),("
+    "embeddableConfig:(),gridData:(h:9,i:'5',w:48,x:0,y:0),id:'08871a10-0f55-"
+    "11ea-b747-998ea9e2cdb2',panelIndex:'5',type:visualization,version:'6.4.2')"
+    ",(embeddableConfig:(),gridData:(h:20,i:'6',w:48,x:0,y:9),id:'1fb2b5f0-"
+    "89d0-11ea-9d17-57bcf81685db',panelIndex:'6',title:'local%20ca1',type:"
+    "visualization,version:'6.8.2'),(embeddableConfig:(),gridData:(h:20,i:'7',"
+    "w:48,x:0,y:29),id:'5d2f3840-89d0-11ea-9d17-57bcf81685db',panelIndex:'7',"
     "app/kibana#/dashboard/"
     "a0b4c6f0-1196-11ea-b747-998ea9e2cdb2?_g=()&_a=(description:'',filters:!(),"
     "fullScreenMode:!f,options:(darkTheme:!f,hidePanelTitles:!f,useMargins:!t),"
@@ -85,5 +141,35 @@ static void bspit(benchmark::State& state) {
   }
 }
 BENCHMARK(bspit);
+
+// 如果返回得vector rec是string类型，则还是存在string得copy，string_view比string find没有优势
+// 没有优势，才是正常
+// 但是如果返回得vector是string_view，那可快太多了，毕竟就是一个快照view
+
+static void string_view_split(const string_view& str, const string& sep,
+                              vector<string_view>& res) {
+  size_t start{str.find_first_not_of(sep)};
+  size_t end{};
+
+  while (start != string_view::npos) {
+    end = str.find_first_of(sep, start + 1);
+    if (end == string_view::npos) end = str.length();
+    res.push_back(str.substr(start, end - start));
+    start = str.find_first_not_of(sep, end + 1);
+  }
+
+}
+static void svfind(benchmark::State& state) {
+  for (auto _ : state) {
+    vector<string_view> v1, v2, v3;
+    string_view_split(s, ":", v1);
+    string_view_split(s, "8", v2);
+    string_view_split(s, "(", v3);
+    // cerr << "sfind v1.size=" << v1.size() << endl;
+    // cerr << "sfind v2.size=" << v2.size() << endl;
+    // cerr << "sfind v3.size=" << v3.size() << endl;
+  }
+}
+BENCHMARK(svfind);
 
 BENCHMARK_MAIN();
