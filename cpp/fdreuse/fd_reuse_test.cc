@@ -22,19 +22,16 @@ void Worker(FdReuse& fd_reuse, int num) {
     os_write << "Worker num=" << num << ", i=" << i << std::endl;
     std::string key = "key_" + std::to_string(rand() % 50);
     int fd = fd_reuse.ObtainFd(key);
-    os_write << "num=" << num << ", key=" << key << ", ObtainFd=" << fd
-             << std::endl;
+    os_write << "num=" << num << ", key=" << key << ", ObtainFd=" << fd << std::endl;
 
     if (fd <= 0) {
       // fd = rand() % 100 + (num - 100);
       fd = open("outlog.fdopen", O_CREAT | O_RDWR, 0666);
-      os_write << "num=" << num << ", key=" << key << ", reset_fd=" << fd
-               << std::endl;
+      os_write << "num=" << num << ", key=" << key << ", reset_fd=" << fd << std::endl;
     }
 
     fd = fd_reuse.ReturnFd(key, fd);
-    os_write << "num=" << num << ", key=" << key << ", ReturnFd=" << fd
-             << std::endl;
+    os_write << "num=" << num << ", key=" << key << ", ReturnFd=" << fd << std::endl;
 
     usleep(1000000);
   }
