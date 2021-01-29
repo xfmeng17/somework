@@ -1,26 +1,30 @@
 #ifndef FD_REUSE_H
 #define FD_REUSE_H
 
+#include <string.h>
+
 #include <deque>
 #include <mutex>
 #include <shared_mutex>
 #include <string>
 #include <unordered_map>
 
+namespace EggM {
+
 const int64_t DEFAULT_FD_CAP = 8;
-// const int64_t DEFAULT_EXPIRE_SECOND = 10 * 60;
-// const int64_t DEFAULT_CLEAN_SECOND = 10 * 60;
-const int64_t DEFAULT_EXPIRE_SECOND = 1;
-const int64_t DEFAULT_CLEAN_SECOND = 5;
+const int64_t DEFAULT_EXPIRE_SECOND = 10 * 60;
+const int64_t DEFAULT_CLEAN_SECOND = 10 * 60;
+// const int64_t DEFAULT_EXPIRE_SECOND = 1;
+// const int64_t DEFAULT_CLEAN_SECOND = 5;
 
 class FdReuseData {
  public:
   FdReuseData();
   ~FdReuseData();
-  int get();
-  int put(int fd);
-  int expired(int64_t expire_second = 0);
-  std::string toString();
+  int Get();
+  int Put(int fd);
+  int IsExpired(int64_t expire_second = 0);
+  std::string ToString();
 
  private:
   mutable std::mutex mtx_;
@@ -32,13 +36,17 @@ class FdReuse {
  public:
   FdReuse();
   ~FdReuse();
-  int obtain_fd(const std::string& key);
-  int obtain_fd(const std::string& ip, int port);
-  int return_fd(const std::string& key, int fd);
-  int return_fd(const std::string& ip, int port, int fd);
-  int do_clean();
-  std::string toString();
-  static int connected_fd(int fd);
+  int ObtainFd(const std::string& key);
+  int ObtainFd(const std::string& ip, int port);
+  int ReturnFd(const std::string& key, int fd);
+  int ReturnFd(const std::string& ip, int port, int fd);
+  int DoClean();
+  std::string ToString();
+
+  static int ConnectWithSelect(const std::string& ip, int port, int64_t timeout_ms);
+  static int ConnectWithPoll(const std::string& ip, int port, int64_t timeout_ms);
+  static int ConnectWithEpoll(const std::string& ip, int port, int64_t timeout_ms);
+  static int IsConnected(int fd);
 
  private:
   mutable std::shared_mutex smtx_;
@@ -46,6 +54,6 @@ class FdReuse {
   int64_t timestamp_last_clean_;
 };
 
-static int clean_task(FdReuse& fd_reuse);
+} // namespace EggM
 
 #endif  // FD_REUSE_H
