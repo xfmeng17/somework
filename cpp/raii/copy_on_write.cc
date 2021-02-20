@@ -16,7 +16,8 @@ private:
 int main()
 {
     std::shared_ptr<Foo> sptr = std::make_shared<Foo>(1);
-    std::shared_ptr<Foo> sptr1 = sptr;
+    std::shared_ptr<Foo> sptr1 =std::make_shared<Foo>(2);
+    sptr1 = sptr;
     std::cout << "The first Foo's bar is " << sptr->getBar() << "\n";
  
     // reset the shared_ptr, hand it a fresh instance of Foo
