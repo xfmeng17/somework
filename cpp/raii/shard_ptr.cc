@@ -4,7 +4,7 @@
 using namespace std;
 
 class Student : public enable_shared_from_this<Student> {
- public:
+public:
   Student() {}
   ~Student() { cout << "~Student() called" << endl; }
   string name;
@@ -44,8 +44,13 @@ int main() {
   string name = "test";
   ptr_stu_0->setName(name);
   string result = ptr_stu_0->getName();
-  std::shared_ptr<Student> ptr_stu_1;
+
+  Student *stu1 = new Student();
+  std::shared_ptr<Student> ptr_stu_1(stu1);
+  cout << "ptr_stu_1.use_count() is:" << ptr_stu_1.use_count() << endl;
+
   ptr_stu_1 = ptr_stu_0;
+  cout << "ptr_stu_1.use_count() is:" << ptr_stu_1.use_count() << endl;
   cout << "ptr_stu_0.use_count() is:" << ptr_stu_0.use_count() << endl;
   cout << "my name is:" << result << endl;
   return 0;

@@ -9,3 +9,4 @@ __pycache__
 python/frieze/frizez.py
 python/frieze/frizez2.py
 
+bazel-*

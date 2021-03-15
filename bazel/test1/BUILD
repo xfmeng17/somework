@@ -1,0 +1,6 @@
+# https://docs.bazel.build/versions/master/be/c-cpp.html#cc_library
+cc_library(
+  name = "test1",
+  srcs = ["test1.cc"],
+  hdrs = ["include/test1.h"],
+)
