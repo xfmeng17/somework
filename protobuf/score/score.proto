@@ -1,0 +1,21 @@
+/*
+    Liscense header: TODO
+*/
+/*
+    Common message struct used for ranking serving.
+*/
+
+syntax = "proto3";
+
+package antpath.predictor;
+
+message Scores {
+  repeated float embedx = 1;
+}
+
+message ItemRankScore {
+  string item_id = 1;
+  repeated float rank_score = 2;
+  uint64 uniq_id = 3;   /// rank the same item id but item feature is different
+  repeated Scores mlt_rank_scores = 4;
+}
