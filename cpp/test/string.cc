@@ -4,6 +4,11 @@
 
 using namespace std;
 
+const std::string get() {
+  std::string x = "xxxx";
+  return x;
+}
+
 int main() {
   stringstream ss;
   int a = 10;
@@ -24,4 +29,7 @@ int main() {
 
   string x = {};
   cout << "x=" << x << endl;
+
+  std::string aaa = get();
+  cout << aaa << endl;
 }
