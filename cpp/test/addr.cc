@@ -1,3 +1,4 @@
+// tLinux2.2 gcc verison 7.3.1
 // g++ -g -O0 addr.cc
 // ./a.out        -> 赋值的长度len默认为18
 // ./a.out <len>  -> 输入赋值的长度len

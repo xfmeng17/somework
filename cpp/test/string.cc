@@ -32,4 +32,6 @@ int main() {
 
   std::string aaa = get();
   cout << aaa << endl;
+
+  std::cout << "sizeof(std::string)=" << sizeof(std::string) << std::endl;
 }
