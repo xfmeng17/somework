@@ -5,7 +5,7 @@ cc_binary(
   copts = [],
   deps = [
     "//bazel/test1:test1",
-    "@googlegtest//:gtest",
-    "@googlegtest//:gtest_main",
+    "@git_googletest//:gtest",
+    "@git_googletest//:gtest_main",
   ],
 )
