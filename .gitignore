@@ -10,3 +10,6 @@ python/frieze/frizez.py
 python/frieze/frizez2.py
 
 bazel-*
+
+a.out
+*/a.out
