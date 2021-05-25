@@ -1,6 +1,8 @@
 # 笔记
 
-## 2021-05-25 gdb + strace sleep
+## 2021-05-25
+
+### gdb + strace sleep
 
 gdb目录下实践了下gdb的相关操作
 
@@ -18,14 +20,18 @@ gdb目录下实践了下gdb的相关操作
 
 参考：https://my.oschina.net/u/3857782/blog/1857566
 
-## 2020-10-10 lambde + functional
+## 2020-10
+
+### lambde + functional
 
 - cpp/c++11/lambde01.cc lambde使用
 - cpp/c++11/functional.cc `std::functional` `std::bind` 使用
 
 ------
 
-## 2020-03-21 "Pure Virtual Function Called" Bug
+## 2020-03-21
+
+### "Pure Virtual Function Called" Bug
 
 总结学习一下最近遇到的core问题，主要是启动rank服务core掉，shell显示"pure virtual method called"的问题
 
