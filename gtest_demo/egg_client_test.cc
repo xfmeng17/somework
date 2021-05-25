@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 
-#include "egg_client_mock.h"
+#include "gtest_demo/egg_client_mock.h"
 
 TEST(GtestDemo, Demo01) {
   int a = 1;
