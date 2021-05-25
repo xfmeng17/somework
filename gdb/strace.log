@@ -1,0 +1,390 @@
+21:22:51.970690 write(1, "main sum = 1007939328\n", 22) = 22 <0.000047>
+21:22:51.972329 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000030>
+21:22:51.972422 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000022>
+21:22:51.972484 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000020>
+21:22:51.972536 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000113>
+21:22:56.472061 write(1, "main sum = 4059597312\n", 22) = 22 <0.000044>
+21:22:56.472193 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:22:56.472252 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:22:56.472305 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000030>
+21:22:56.472376 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000102>
+21:23:00.998763 write(1, "main sum = 2816288000\n", 22) = 22 <0.000046>
+21:23:00.998907 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000023>
+21:23:00.998974 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000022>
+21:23:00.999036 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000022>
+21:23:00.999094 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000111>
+21:23:05.492916 write(1, "main sum = 1572978688\n", 22) = 22 <0.000042>
+21:23:05.493041 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000020>
+21:23:05.493099 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000020>
+21:23:05.493151 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000020>
+21:23:05.493202 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000119>
+21:23:09.993692 write(1, "main sum = 329669376\n", 21) = 21 <0.000043>
+21:23:09.993814 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000020>
+21:23:09.993870 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000020>
+21:23:09.993922 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000020>
+21:23:09.993970 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000121>
+21:23:14.488923 write(1, "main sum = 3381327360\n", 22) = 22 <0.000041>
+21:23:14.489043 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000020>
+21:23:14.489100 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000020>
+21:23:14.489151 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000019>
+21:23:14.489200 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000108>
+21:23:18.986652 write(1, "main sum = 2138018048\n", 22) = 22 <0.000046>
+21:23:18.986801 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000024>
+21:23:18.986890 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000020>
+21:23:18.986944 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000020>
+21:23:18.986994 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000108>
+21:23:23.461453 write(1, "main sum = 894708736\n", 21) = 21 <0.000047>
+21:23:23.461590 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000023>
+21:23:23.461653 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000022>
+21:23:23.461710 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:23:23.461765 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000129>
+21:23:27.967432 write(1, "main sum = 3946366720\n", 22) = 22 <0.000045>
+21:23:27.967564 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000022>
+21:23:27.967625 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:23:27.967681 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:23:27.967735 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000324>
+21:23:32.476781 write(1, "main sum = 2703057408\n", 22) = 22 <0.000045>
+21:23:32.476915 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:23:32.476976 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:23:32.477030 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:23:32.477082 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000116>
+21:23:36.939546 write(1, "main sum = 1459748096\n", 22) = 22 <0.000047>
+21:23:36.939688 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:23:36.939748 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:23:36.939803 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000020>
+21:23:36.939854 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000133>
+21:23:41.402611 write(1, "main sum = 216438784\n", 21) = 21 <0.000045>
+21:23:41.402736 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:23:41.402808 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:23:41.402862 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:23:41.402915 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000112>
+21:23:45.911246 write(1, "main sum = 3268096768\n", 22) = 22 <0.000044>
+21:23:45.911380 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000022>
+21:23:45.911441 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000023>
+21:23:45.911498 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000022>
+21:23:45.911556 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000105>
+21:23:50.404547 write(1, "main sum = 2024787456\n", 22) = 22 <0.000046>
+21:23:50.404690 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000024>
+21:23:50.404754 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000023>
+21:23:50.404812 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000022>
+21:23:50.404868 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000115>
+21:23:54.898044 write(1, "main sum = 781478144\n", 21) = 21 <0.000047>
+21:23:54.898179 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000022>
+21:23:54.898241 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000022>
+21:23:54.898298 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000033>
+21:23:54.898384 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000113>
+21:23:59.377344 write(1, "main sum = 3833136128\n", 22) = 22 <0.000043>
+21:23:59.377468 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:23:59.377527 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000026>
+21:23:59.377589 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:23:59.377642 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000093>
+21:24:03.868046 write(1, "main sum = 2589826816\n", 22) = 22 <0.000045>
+21:24:03.868178 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:24:03.868237 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:24:03.868290 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000020>
+21:24:03.868342 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000125>
+21:24:08.356113 write(1, "main sum = 1346517504\n", 22) = 22 <0.000044>
+21:24:08.356241 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000022>
+21:24:08.356301 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:24:08.356356 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000016>
+21:24:08.356405 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000155>
+21:24:12.838528 write(1, "main sum = 103208192\n", 21) = 21 <0.000046>
+21:24:12.838671 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:24:12.838730 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000020>
+21:24:12.838783 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:24:12.838835 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000099>
+21:24:17.321523 write(1, "main sum = 3154866176\n", 22) = 22 <0.000045>
+21:24:17.321666 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000020>
+21:24:17.321724 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000020>
+21:24:17.321776 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000020>
+21:24:17.321827 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000104>
+21:24:21.837268 write(1, "main sum = 1911556864\n", 22) = 22 <0.000045>
+21:24:21.837400 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:24:21.837458 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:24:21.837510 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000019>
+21:24:21.837569 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000110>
+21:24:26.326123 write(1, "main sum = 668247552\n", 21) = 21 <0.000047>
+21:24:26.326258 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000020>
+21:24:26.326315 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000020>
+21:24:26.326368 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000019>
+21:24:26.326417 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000109>
+21:24:30.782638 write(1, "main sum = 3719905536\n", 22) = 22 <0.000046>
+21:24:30.782766 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000022>
+21:24:30.782828 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:24:30.782884 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000026>
+21:24:30.782955 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000110>
+21:24:35.291028 write(1, "main sum = 2476596224\n", 22) = 22 <0.000044>
+21:24:35.291152 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000022>
+21:24:35.291214 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000022>
+21:24:35.291275 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000027>
+21:24:35.291334 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000115>
+21:24:39.783889 write(1, "main sum = 1233286912\n", 22) = 22 <0.000046>
+21:24:39.784022 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000022>
+21:24:39.784084 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000022>
+21:24:39.784140 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000022>
+21:24:39.784193 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000115>
+21:24:44.282226 write(1, "main sum = 4284944896\n", 22) = 22 <0.000047>
+21:24:44.282350 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000022>
+21:24:44.282411 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000022>
+21:24:44.282465 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000022>
+21:24:44.282518 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000131>
+21:24:48.730657 write(1, "main sum = 3041635584\n", 22) = 22 <0.000048>
+21:24:48.730785 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000022>
+21:24:48.730844 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:24:48.730899 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000022>
+21:24:48.730952 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000124>
+21:24:53.222197 write(1, "main sum = 1798326272\n", 22) = 22 <0.000080>
+21:24:53.222350 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000020>
+21:24:53.222409 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:24:53.222461 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000020>
+21:24:53.222511 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000092>
+21:24:57.737002 write(1, "main sum = 555016960\n", 21) = 21 <0.000041>
+21:24:57.737123 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000020>
+21:24:57.737180 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000020>
+21:24:57.737233 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000019>
+21:24:57.737282 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000102>
+21:25:02.223866 write(1, "main sum = 3606674944\n", 22) = 22 <0.000045>
+21:25:02.223993 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000033>
+21:25:02.224065 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:25:02.224121 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:25:02.224176 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000112>
+21:25:06.717485 write(1, "main sum = 2363365632\n", 22) = 22 <0.000046>
+21:25:06.717631 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000023>
+21:25:06.717697 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000022>
+21:25:06.717755 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000022>
+21:25:06.717810 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000128>
+21:25:11.204992 write(1, "main sum = 1120056320\n", 22) = 22 <0.000042>
+21:25:11.205108 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:25:11.205167 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:25:11.205222 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:25:11.205275 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000114>
+21:25:15.673725 write(1, "main sum = 4171714304\n", 22) = 22 <0.000044>
+21:25:15.673847 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:25:15.673906 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:25:15.673960 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:25:15.674013 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000100>
+21:25:20.170067 write(1, "main sum = 2928404992\n", 22) = 22 <0.000044>
+21:25:20.170182 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:25:20.170238 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000020>
+21:25:20.170290 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000020>
+21:25:20.170342 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000109>
+21:25:24.677359 write(1, "main sum = 1685095680\n", 22) = 22 <0.000044>
+21:25:24.677493 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:25:24.677562 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:25:24.677616 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:25:24.677669 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000144>
+21:25:29.169675 write(1, "main sum = 441786368\n", 21) = 21 <0.000044>
+21:25:29.169798 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000020>
+21:25:29.169856 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000024>
+21:25:29.169913 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000020>
+21:25:29.169964 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000102>
+21:25:33.666189 write(1, "main sum = 3493444352\n", 22) = 22 <0.000044>
+21:25:33.666316 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:25:33.666375 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:25:33.666429 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:25:33.666481 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000103>
+21:25:38.166860 write(1, "main sum = 2250135040\n", 22) = 22 <0.000046>
+21:25:38.166979 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:25:38.167037 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:25:38.167092 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000020>
+21:25:38.167144 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000137>
+21:25:42.640194 write(1, "main sum = 1006825728\n", 22) = 22 <0.000046>
+21:25:42.640335 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000032>
+21:25:42.640408 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:25:42.640463 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:25:42.640515 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000199>
+21:25:47.134270 write(1, "main sum = 4058483712\n", 22) = 22 <0.000042>
+21:25:47.134383 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000020>
+21:25:47.134439 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000020>
+21:25:47.134491 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000019>
+21:25:47.134557 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000117>
+21:25:51.627898 write(1, "main sum = 2815174400\n", 22) = 22 <0.000042>
+21:25:51.628027 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000020>
+21:25:51.628086 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:25:51.628138 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000019>
+21:25:51.628189 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000109>
+21:25:56.125282 write(1, "main sum = 1571865088\n", 22) = 22 <0.000048>
+21:25:56.125422 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000023>
+21:25:56.125484 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000022>
+21:25:56.125548 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000023>
+21:25:56.125604 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000100>
+21:26:00.623270 write(1, "main sum = 328555776\n", 21) = 21 <0.000041>
+21:26:00.623385 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000020>
+21:26:00.623441 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000020>
+21:26:00.623493 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000019>
+21:26:00.623551 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000112>
+21:26:05.113997 write(1, "main sum = 3380213760\n", 22) = 22 <0.000053>
+21:26:05.114141 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:26:05.114214 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:26:05.114270 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000020>
+21:26:05.114324 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000127>
+21:26:09.610568 write(1, "main sum = 2136904448\n", 22) = 22 <0.000044>
+21:26:09.610699 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:26:09.610759 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000020>
+21:26:09.610813 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:26:09.610865 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000111>
+21:26:14.101265 write(1, "main sum = 893595136\n", 21) = 21 <0.000044>
+21:26:14.101377 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000020>
+21:26:14.101433 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000020>
+21:26:14.101492 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000020>
+21:26:14.101547 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000115>
+21:26:18.597054 write(1, "main sum = 3945253120\n", 22) = 22 <0.000045>
+21:26:18.597186 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000044>
+21:26:18.597289 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000023>
+21:26:18.597361 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000022>
+21:26:18.597417 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000116>
+21:26:23.078963 write(1, "main sum = 2701943808\n", 22) = 22 <0.000043>
+21:26:23.079078 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000020>
+21:26:23.079135 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000020>
+21:26:23.079186 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000020>
+21:26:23.079237 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000111>
+21:26:27.560234 write(1, "main sum = 1458634496\n", 22) = 22 <0.000045>
+21:26:27.560382 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:26:27.560444 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000022>
+21:26:27.560502 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000029>
+21:26:27.560564 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000120>
+21:26:32.041763 write(1, "main sum = 215325184\n", 21) = 21 <0.000046>
+21:26:32.041902 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000020>
+21:26:32.041960 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000020>
+21:26:32.042013 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000020>
+21:26:32.042063 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000637>
+21:26:36.522231 write(1, "main sum = 3266983168\n", 22) = 22 <0.000049>
+21:26:36.522374 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000023>
+21:26:36.522438 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000022>
+21:26:36.522495 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000026>
+21:26:36.522554 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000125>
+21:26:41.004943 write(1, "main sum = 2023673856\n", 22) = 22 <0.000044>
+21:26:41.005066 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:26:41.005122 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000020>
+21:26:41.005173 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000019>
+21:26:41.005222 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000172>
+21:26:45.490496 write(1, "main sum = 780364544\n", 21) = 21 <0.000046>
+21:26:45.490641 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000022>
+21:26:45.490707 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:26:45.490763 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:26:45.490817 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000261>
+21:26:49.951467 write(1, "main sum = 3832022528\n", 22) = 22 <0.000047>
+21:26:49.951608 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000022>
+21:26:49.951670 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000022>
+21:26:49.951727 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000022>
+21:26:49.951781 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000119>
+21:26:54.431542 write(1, "main sum = 2588713216\n", 22) = 22 <0.000050>
+21:26:54.431698 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000026>
+21:26:54.431783 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000028>
+21:26:54.431866 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000034>
+21:26:54.431949 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000119>
+21:26:58.941757 write(1, "main sum = 1345403904\n", 22) = 22 <0.000046>
+21:26:58.941889 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:26:58.941948 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000020>
+21:26:58.942000 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000020>
+21:26:58.942058 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000105>
+21:27:03.430586 write(1, "main sum = 102094592\n", 21) = 21 <0.000053>
+21:27:03.430741 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000023>
+21:27:03.430814 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:27:03.430870 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:27:03.430934 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000104>
+21:27:07.954290 write(1, "main sum = 3153752576\n", 22) = 22 <0.000044>
+21:27:07.954418 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:27:07.954478 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000022>
+21:27:07.954539 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:27:07.954592 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000113>
+21:27:12.423605 write(1, "main sum = 1910443264\n", 22) = 22 <0.000059>
+21:27:12.423767 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000022>
+21:27:12.423839 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:27:12.423894 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:27:12.423947 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000118>
+21:27:16.892479 write(1, "main sum = 667133952\n", 21) = 21 <0.000048>
+21:27:16.892629 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000022>
+21:27:16.892688 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:27:16.892743 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:27:16.892797 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000121>
+21:27:21.355376 write(1, "main sum = 3718791936\n", 22) = 22 <0.000045>
+21:27:21.355500 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000032>
+21:27:21.355582 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000026>
+21:27:21.355647 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:27:21.355701 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000111>
+21:27:25.858150 write(1, "main sum = 2475482624\n", 22) = 22 <0.000047>
+21:27:25.858276 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:27:25.858336 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:27:25.858390 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:27:25.858445 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000117>
+21:27:30.365667 write(1, "main sum = 1232173312\n", 22) = 22 <0.000040>
+21:27:30.365785 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:27:30.365844 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:27:30.365898 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000020>
+21:27:30.365951 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000143>
+21:27:34.857621 write(1, "main sum = 4283831296\n", 22) = 22 <0.000047>
+21:27:34.857755 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000022>
+21:27:34.857817 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000023>
+21:27:34.857875 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000022>
+21:27:34.857931 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000108>
+21:27:39.370431 write(1, "main sum = 3040521984\n", 22) = 22 <0.000071>
+21:27:39.370604 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000023>
+21:27:39.370680 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000023>
+21:27:39.370738 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000022>
+21:27:39.370799 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000105>
+21:27:43.852913 write(1, "main sum = 1797212672\n", 22) = 22 <0.000046>
+21:27:43.853043 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:27:43.853101 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:27:43.853155 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000020>
+21:27:43.853207 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000122>
+21:27:48.345203 write(1, "main sum = 553903360\n", 21) = 21 <0.000046>
+21:27:48.345331 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000022>
+21:27:48.345393 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000022>
+21:27:48.345450 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000022>
+21:27:48.345514 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000107>
+21:27:52.831429 write(1, "main sum = 3605561344\n", 22) = 22 <0.000051>
+21:27:52.831560 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000022>
+21:27:52.831622 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000023>
+21:27:52.831679 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000022>
+21:27:52.831735 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000110>
+21:27:57.326939 write(1, "main sum = 2362252032\n", 22) = 22 <0.000047>
+21:27:57.327086 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:27:57.327146 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:27:57.327200 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:27:57.327252 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000111>
+21:28:01.829223 write(1, "main sum = 1118942720\n", 22) = 22 <0.000044>
+21:28:01.829358 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:28:01.829418 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:28:01.829472 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000027>
+21:28:01.829572 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000115>
+21:28:06.325705 write(1, "main sum = 4170600704\n", 22) = 22 <0.000045>
+21:28:06.325833 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:28:06.325890 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000028>
+21:28:06.325949 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000019>
+21:28:06.325999 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000110>
+21:28:10.821637 write(1, "main sum = 2927291392\n", 22) = 22 <0.000059>
+21:28:10.821802 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000022>
+21:28:10.821876 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:28:10.821930 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:28:10.821981 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000111>
+21:28:15.314512 write(1, "main sum = 1683982080\n", 22) = 22 <0.000043>
+21:28:15.314627 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:28:15.314685 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000020>
+21:28:15.314738 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000020>
+21:28:15.314789 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000121>
+21:28:19.810396 write(1, "main sum = 440672768\n", 21) = 21 <0.000039>
+21:28:19.810509 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:28:19.810566 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000020>
+21:28:19.810619 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:28:19.810669 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000111>
+21:28:24.320260 write(1, "main sum = 3492330752\n", 22) = 22 <0.000045>
+21:28:24.320387 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000022>
+21:28:24.320447 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000020>
+21:28:24.320506 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:28:24.320558 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000107>
+21:28:28.831259 write(1, "main sum = 2249021440\n", 22) = 22 <0.000045>
+21:28:28.831387 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:28:28.831446 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:28:28.831504 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:28:28.831557 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000102>
+21:28:33.348632 write(1, "main sum = 1005712128\n", 22) = 22 <0.000045>
+21:28:33.348763 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:28:33.348824 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:28:33.348878 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:28:33.348931 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000124>
+21:28:37.854305 write(1, "main sum = 4057370112\n", 22) = 22 <0.000046>
+21:28:37.854444 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000021>
+21:28:37.854510 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000021>
+21:28:37.854564 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000021>
+21:28:37.854617 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000131>

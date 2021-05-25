@@ -1,4 +1,22 @@
-# 阅读笔记
+# 笔记
+
+## 2021-05-25
+
+gdb目录下实践了下gdb的相关操作
+
+其中test04，strace了一下进程，发现sleep()的系统调用是：
+21:22:51.972329 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000030>
+21:22:51.972422 rt_sigaction(SIGCHLD, NULL, {SIG_DFL, [], 0}, 8) = 0 <0.000022>
+21:22:51.972484 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000020>
+21:22:51.972536 nanosleep({1, 0}, 0x7ffd77fc4ec0) = 0 <1.000113>
+
+非常疑惑，为啥还操作的信号SIGCHLD，搜了一大圈，是历史遗留的粑粑：https://unix.stackexchange.com/questions/528362/sleep-system-call-on-linux-interaction-with-signals
+读APUE时也说过，用sig实现sleep非常扯淡，有一个版本系统使用的SIGALAM，还是个BUG
+
+如果strace usleep() 直接就是nanosleep()的系统调用，而nanosleep()实现的原理，我自己的理解：
+内核级别的timer，调用时候插入，key=tid，内核到点通过信号/IO唤醒
+
+参考：https://my.oschina.net/u/3857782/blog/1857566
 
 ## 2020-10-10
 
