@@ -23,6 +23,7 @@ class Test {
 };
 
 int main (int argc, char** argv) {
+  std::cout << "__VERSION__=" << __VERSION__  << std::endl;
   std::cout << "sizeof(Test)=" << sizeof(Test) << std::endl;
 
   Test t2;
