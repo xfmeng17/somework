@@ -5,7 +5,7 @@ cc_binary(
     "egg_client_test.cc",
   ],
   deps = [
-    "@googletest//:gtest",
-    "@googletest//:gtest_main",    
+    "@git_googletest//:gtest",
+    "@git_googletest//:gtest_main",    
   ],
 )
