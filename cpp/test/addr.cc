@@ -10,7 +10,7 @@
 class Test {
   public:
     uint64_t a;
-    char b;
+    char* b;
     std::string c;
     double d;
     ~Test() {
@@ -27,7 +27,7 @@ int main (int argc, char** argv) {
 
   Test t2;
   t2.a = 123;
-  t2.b = 'X';
+  t2.b = "X";
   t2.c = "ABCD";
   t2.d = 4.44;
 
@@ -42,6 +42,7 @@ int main (int argc, char** argv) {
   void* p_c = ((char*)p)+16;
   uint64_t p_c_addr = *((uint64_t*)(p_c));
   char *p_c_char = (char*)p_c_addr;
+  std::cout << &p_c_addr << std::endl;
   std::cout << "p_c=" << p_c << ",p_c_addr=" << p_c_addr << ",(void*)p_c_char=" << (void*)p_c_char << ",p_c_char=" << p_c_char << std::endl;
 
   // ???? 小于等于18不会coredumo，大于18就会，为啥啊！！
