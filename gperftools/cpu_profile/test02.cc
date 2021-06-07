@@ -1,7 +1,7 @@
 #include <iostream>
 #include <math.h>
 
-int func01() {
+double func01() {
   double n = 888888888888887;
   double r = 0.0;
   for (int i = 0; i < 10000 * 10000; i++) {
@@ -12,7 +12,8 @@ int func01() {
   }
   return r;
 }
-int func02() {
+
+double func02() {
   double n = 888888888888887;
   double r = 0.0;
   for (int i = 0; i < 10000 * 10000; i++) {
@@ -24,10 +25,12 @@ int func02() {
 }
 
 int main() {
-  while (true) {
-    func01();
-    func02();
-    // break;
+
+  while (1) {
+    double r1 = func01();
+    double r2 = func02();
+    std::cout << "r1=" << r1 << ",r2=" << r2 << std::endl;
   }
+
   return 0;
 }
