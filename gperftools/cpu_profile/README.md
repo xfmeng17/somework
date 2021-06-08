@@ -45,6 +45,7 @@ GCC 的-l选项（小写的 L）可以让我们手动添加链接库：
 2. 使用-L选项，为 GCC 增加另一个搜索链接库的目录：`gcc main.c -o main.out -L/usr/lib -lm`
 3. 把包括所需链接库的目录加到环境变量 LIBRARYPATH 中 `export LIBRARYPATH=LIBRARYPATH:/xx/xx/xx`
 
+具体可以`man gcc`查询
 - -E（大写） 预处理指定的源文件，不进行编译。
 - -S（大写） 编译指定的源文件，但是不进行汇编。
 - -c 编译、汇编指定的源文件，但是不进行链接。
@@ -54,3 +55,4 @@ GCC 的-l选项（小写的 L）可以让我们手动添加链接库：
 - -std= 手动指令编程语言所遵循的标准，例如 c89、c90、c++98、c++11 等。
 - -save-temps 输入中间结果
 - -fverbose-asm 选项，编译阶段，GCC 编译器会自行为汇编代码添加必要的注释
+- -xc++  -x是language，表示c++语言写的
