@@ -21,6 +21,8 @@ cc_binary(
   ],
   linkopts = [
     "-lprofiler",
+    # "-static",
   ],
+  # linkshared = True,
   deps = [],
 )

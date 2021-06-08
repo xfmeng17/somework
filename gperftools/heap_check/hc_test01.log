@@ -1,0 +1,23 @@
+WARNING: Perftools heap leak checker is active -- Performance may suffer
+Starting tracking the heap
+Dumping heap profile to profile.0001.heap (Exiting, 10 MB in use)
+Have memory regions w/o callers: might report false leaks
+Leak check _main_ detected leaks of 10485760 bytes in 10 objects
+The 1 largest leaks:
+Using local file ./out/test01.
+Leak of 10485760 bytes in 10 objects allocated from:
+	@ 40075f get_buffer
+	@ 400790 leak_memory
+	@ 4007ff main
+	@ 7f6272a3c555 __libc_start_main
+	@ 400699 _start
+	@ 0 _init
+
+
+If the preceding stack traces are not enough to find the leaks, try running THIS shell command:
+
+pprof ./out/test01 "/tmp/test01.24675._main_-end.heap" --inuse_objects --lines --heapcheck  --edgefraction=1e-10 --nodefraction=1e-10 --gv
+
+If you are still puzzled about why the leaks are there, try rerunning this program with HEAP_CHECK_TEST_POINTER_ALIGNMENT=1 and/or with HEAP_CHECK_MAX_POINTER_OFFSET=-1
+If the leak report occurs in a small fraction of runs, try running with TCMALLOC_MAX_FREE_QUEUE_SIZE of few hundred MB or with TCMALLOC_RECLAIM_MEMORY=false, it might help find leaks more re
+Exiting with error code (instead of crashing) because of whole-program memory leaks

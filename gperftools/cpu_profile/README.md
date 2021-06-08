@@ -1,3 +1,4 @@
+# gperftools
 
 ## 下面主要是cpuprofile
 
@@ -22,8 +23,10 @@ ldd如果没链接libprofiler.so，可以设置`LD_PRELOAD=/usr/lib64/libprofile
 > LD_PRELOAD，是个环境变量，用于动态库的加载，动态库加载的优先级最高，一般情况下，其加载顺序为LD_PRELOAD>LD_LIBRARY_PATH>/etc/ld.so.cache>/lib>/usr/lib
 
 bazel aquery gperftools/cpu_profile:test02
+bazel build gperftools/cpu_profile:test02 --sandbox_debug (or -s)
 
-test02_aquery.txt显式了过程
+test02_aquery.txt显式了过程:
+
 1. Compiling
 2. Writing params
 3. Linking
@@ -61,10 +64,11 @@ GCC 的-l选项（小写的 L）可以让我们手动添加链接库：
 2. 使用-L选项，为 GCC 增加另一个搜索链接库的目录：`gcc main.c -o main.out -L/usr/lib -lm`
 3. 把包括所需链接库的目录加到环境变量 LIBRARYPATH 中 `export LIBRARYPATH=LIBRARYPATH:/xx/xx/xx`
 
-具体可以`man gcc`查询
-- -E（大写） 预处理指定的源文件，不进行编译。
-- -S（大写） 编译指定的源文件，但是不进行汇编。
-- -c 编译、汇编指定的源文件，但是不进行链接。
+具体可以`man gcc`查询:
+
+- -E（大写） 预处理指定的源文件，不进行编译
+- -S（大写） 编译指定的源文件，但是不进行汇编
+- -c 编译、汇编指定的源文件，但是不进行链接
 - -o 指定生成文件的文件名。
 - -llibrary（-I library） 其中 library 表示要搜索的库文件的名称。该选项用于手动指定链接环节中程序可以调用的库文件。建议 -l 和库文件名之间不使用空格，比如 -lstdc++。
 - -ansi 对于 C 语言程序来说，其等价于 -std=c90；对于 C++ 程序来说，其等价于 -std=c++98。
