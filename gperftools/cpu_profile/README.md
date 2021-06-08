@@ -1,11 +1,27 @@
+
+## 下面主要是cpuprofile
+
 https://bitjoy.net/2017/02/07/gperftools-tutorial/
+
+https://wiki.geany.org/howtos/profiling/gperftools
+https://gperftools.github.io/gperftools/cpuprofile.html
+https://developer.ridgerun.com/wiki/index.php?title=Profiling_with_GPerfTools#A.29_Profile_the_whole_process_runtime
+https://www.dazhuanlan.com/2019/12/07/5dea86840d2b9/
+
 test01
 test02
 
 CPUPROFILE=./test02.prof CPUPROFILESIGNAL=12 ./bin/test02
 一直运行的，可以使用CPUPROFILESIGNAL，但是，必须设置环境变量CPUPROFILE，暂时记住，还没理解为啥
 
+只关注一个函数
+pprof --text --focus=func02 bin/test02 ./test02.prof.0
+
 研究研究有引申开来研究了下bazel是如何编译的，为啥在copts加-lprofiler，ldd产出的test02并没有链接profiler
+ldd如果没链接libprofiler.so，可以设置`LD_PRELOAD=/usr/lib64/libprofiler.so`
+> LD_PRELOAD，是个环境变量，用于动态库的加载，动态库加载的优先级最高，一般情况下，其加载顺序为LD_PRELOAD>LD_LIBRARY_PATH>/etc/ld.so.cache>/lib>/usr/lib
+
+bazel aquery gperftools/cpu_profile:test02
 
 test02_aquery.txt显式了过程
 1. Compiling
