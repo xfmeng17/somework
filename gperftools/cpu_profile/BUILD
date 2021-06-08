@@ -16,6 +16,8 @@ cc_binary(
   srcs = ["test02.cc"],
   copts = [
     "-g",
+    "-o0",
+    # "-std=c++17",
   ],
   linkopts = [
     "-lprofiler",

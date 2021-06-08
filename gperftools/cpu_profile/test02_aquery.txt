@@ -1,0 +1,141 @@
+action 'Compiling gperftools/cpu_profile/test02.cc'
+  Mnemonic: CppCompile
+  Target: //gperftools/cpu_profile:test02
+  Configuration: k8-fastbuild
+  ActionKey: 6d5bfa95527a8bfc7d5460707963fa6c
+  Inputs: [bazel-out/host/internal/_middlemen/external_Slocal_Uconfig_Ucc_Ccompiler_Udeps, external/bazel_tools/tools/cpp/grep-includes.sh, gperftools/cpu_profile/test02.cc]
+  Outputs: [bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/_objs/test02/test02.pic.d, bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/_objs/test02/test02.pic.o]
+  Command Line: (exec /usr/lib64/ccache/gcc \
+    -U_FORTIFY_SOURCE \
+    -fstack-protector \
+    -Wall \
+    -Wunused-but-set-parameter \
+    -Wno-free-nonheap-object \
+    -fno-omit-frame-pointer \
+    '-std=c++0x' \
+    -MD \
+    -MF \
+    bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/_objs/test02/test02.pic.d \
+    '-frandom-seed=bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/_objs/test02/test02.pic.o' \
+    -fPIC \
+    -iquote \
+    . \
+    -iquote \
+    bazel-out/k8-fastbuild/bin \
+    -iquote \
+    external/bazel_tools \
+    -iquote \
+    bazel-out/k8-fastbuild/bin/external/bazel_tools \
+    '--std=c++17' \
+    -g \
+    -o0 \
+    -fno-canonical-system-headers \
+    -Wno-builtin-macro-redefined \
+    '-D__DATE__="redacted"' \
+    '-D__TIMESTAMP__="redacted"' \
+    '-D__TIME__="redacted"' \
+    -c \
+    gperftools/cpu_profile/test02.cc \
+    -o \
+    bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/_objs/test02/test02.pic.o)
+
+action 'Writing file gperftools/cpu_profile/test02-2.params'
+  Mnemonic: FileWrite
+  Target: //gperftools/cpu_profile:test02
+  Configuration: k8-fastbuild
+  ActionKey: 82f834bb057366d81f41770fbc36d5a4
+  Inputs: []
+  Outputs: [bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/test02-2.params]
+
+action 'Linking gperftools/cpu_profile/test02'
+  Mnemonic: CppLink
+  Target: //gperftools/cpu_profile:test02
+  Configuration: k8-fastbuild
+  ActionKey: 16da2c55d9a3db837c47705f15516049
+  Inputs: [bazel-out/host/internal/_middlemen/external_Slocal_Uconfig_Ucc_Ccompiler_Udeps, bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/_objs/test02/test02.pic.o, bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/test02-2.params, external/bazel_tools/tools/cpp/build_interface_so, external/bazel_tools/tools/cpp/link_dynamic_library.sh]
+  Outputs: [bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/test02]
+  Command Line: (exec /usr/lib64/ccache/gcc \
+    -o \
+    bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/test02 \
+    -Wl,-S \
+    '-fuse-ld=gold' \
+    -Wl,-no-as-needed \
+    -Wl,-z,relro,-z,now \
+    -B/usr/lib64/ccache \
+    -pass-exit-codes \
+    -lstdc++ \
+    -lm \
+    bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/_objs/test02/test02.pic.o \
+    -lprofiler \
+    @bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/test02-2.params)
+
+action 'Stripping gperftools/cpu_profile/test02.stripped for //gperftools/cpu_profile:test02'
+  Mnemonic: CcStrip
+  Target: //gperftools/cpu_profile:test02
+  Configuration: k8-fastbuild
+  ActionKey: b22f66714b8f81ce42d6eeab8591ace6
+  Inputs: [bazel-out/host/internal/_middlemen/external_Slocal_Uconfig_Ucc_Cempty, bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/test02]
+  Outputs: [bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/test02.stripped]
+  Command Line: (exec /usr/bin/strip \
+    -S \
+    -p \
+    -o \
+    bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/test02.stripped \
+    -R \
+    .gnu.switches.text.quote_paths \
+    -R \
+    .gnu.switches.text.bracket_paths \
+    -R \
+    .gnu.switches.text.system_paths \
+    -R \
+    .gnu.switches.text.cpp_defines \
+    -R \
+    .gnu.switches.text.cpp_includes \
+    -R \
+    .gnu.switches.text.cl_args \
+    -R \
+    .gnu.switches.text.lipo_info \
+    -R \
+    .gnu.switches.text.annotation \
+    bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/test02)
+
+action 'Writing file gperftools/cpu_profile/test02.dwp'
+  Mnemonic: FileWrite
+  Target: //gperftools/cpu_profile:test02
+  Configuration: k8-fastbuild
+  ActionKey: 4831e1bfc6c56aae5963313c85dbc4c3
+  Inputs: []
+  Outputs: [bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/test02.dwp]
+
+action 'Creating source manifest for //gperftools/cpu_profile:test02'
+  Mnemonic: SourceSymlinkManifest
+  Target: //gperftools/cpu_profile:test02
+  Configuration: k8-fastbuild
+  ActionKey: d7a1cdc50f945b5d51897b1c8f1456fd
+  Inputs: []
+  Outputs: [bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/test02.runfiles_manifest]
+
+action 'Creating runfiles tree bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/test02.runfiles'
+  Mnemonic: SymlinkTree
+  Target: //gperftools/cpu_profile:test02
+  Configuration: k8-fastbuild
+  ActionKey: 244d8f60fb24190a697fee4650159079
+  Inputs: [bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/test02.runfiles_manifest]
+  Outputs: [bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/test02.runfiles/MANIFEST]
+
+runfiles for //gperftools/cpu_profile:test02
+  Mnemonic: Middleman
+  Target: //gperftools/cpu_profile:test02
+  Configuration: k8-fastbuild
+  ActionKey: 5c25f976e1ff1473093bcd3508178109
+  Inputs: [bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/test02, bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/test02.runfiles/MANIFEST]
+  Outputs: [bazel-out/k8-fastbuild/internal/_middlemen/gperftools_Scpu_Uprofile_Stest02-runfiles]
+
+action 'Creating file sources list for //gperftools/cpu_profile:test02'
+  Mnemonic: PackagingSourcesManifest
+  Target: //gperftools/cpu_profile:test02
+  Configuration: k8-fastbuild
+  ActionKey: d7a1cdc50f945b5d51897b1c8f1456fd
+  Inputs: []
+  Outputs: [bazel-out/k8-fastbuild/bin/gperftools/cpu_profile/test02.runfiles.SOURCES]
+
