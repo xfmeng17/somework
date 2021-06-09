@@ -4,7 +4,17 @@ cc_binary(
   srcs = ["test01.cc"],
   copts = [
     "-g",
-    "-o0",
+  ],
+  linkopts = [
+    "-ltcmalloc",
+  ],
+)
+
+cc_binary(
+  name = "test02",
+  srcs = ["test02.cc"],
+  copts = [
+    "-g",
   ],
   linkopts = [
     "-ltcmalloc",

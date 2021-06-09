@@ -1,0 +1,58 @@
+heap profile:      1:  1048576 [     1:  1048576] @ heapprofile
+     1:  1048576 [     1:  1048576] @ 0x0040075f 0x00400790 0x00400807 0x7fc115a3a555 0x00400699 0x00000000
+
+MAPPED_LIBRARIES:
+00400000-00401000 r-xp 00000000 00:00 20321435    /data/.cache/bazel/_bazel_root/d05f494f355c785c16836bffa209ae08/execroot/__main__/bazel-out/k8-dbg/bin/gperftools/heap_check/test02
+00401000-00402000 r--p 00000000 00:00 20321435    /data/.cache/bazel/_bazel_root/d05f494f355c785c16836bffa209ae08/execroot/__main__/bazel-out/k8-dbg/bin/gperftools/heap_check/test02
+00402000-00403000 rw-p 00001000 00:00 20321435    /data/.cache/bazel/_bazel_root/d05f494f355c785c16836bffa209ae08/execroot/__main__/bazel-out/k8-dbg/bin/gperftools/heap_check/test02
+015a6000-01fa6000 rw-p 00000000 00:00 0           [heap]
+7fc114f57000-7fc1151c7000 rw-p 00000000 00:00 0           
+7fc1151c7000-7fc1151de000 r-xp 00000000 00:00 25602       /usr/lib64/libpthread-2.17.so
+7fc1151de000-7fc1153dd000 ---p 00017000 00:00 25602       /usr/lib64/libpthread-2.17.so
+7fc1153dd000-7fc1153de000 r--p 00016000 00:00 25602       /usr/lib64/libpthread-2.17.so
+7fc1153de000-7fc1153df000 rw-p 00017000 00:00 25602       /usr/lib64/libpthread-2.17.so
+7fc1153df000-7fc1153e3000 rw-p 00000000 00:00 0           
+7fc1153e3000-7fc1153ed000 r-xp 00000000 00:00 5915        /usr/lib64/libunwind.so.8.0.1
+7fc1153ed000-7fc1155ed000 ---p 0000a000 00:00 5915        /usr/lib64/libunwind.so.8.0.1
+7fc1155ed000-7fc1155ee000 r--p 0000a000 00:00 5915        /usr/lib64/libunwind.so.8.0.1
+7fc1155ee000-7fc1155ef000 rw-p 0000b000 00:00 5915        /usr/lib64/libunwind.so.8.0.1
+7fc1155ef000-7fc1155fd000 rw-p 00000000 00:00 0           
+7fc1155fd000-7fc115613000 r-xp 00000000 00:00 5671        /usr/lib64/libgcc_s-7-20180303.so.1
+7fc115613000-7fc115812000 ---p 00016000 00:00 5671        /usr/lib64/libgcc_s-7-20180303.so.1
+7fc115812000-7fc115813000 r--p 00015000 00:00 5671        /usr/lib64/libgcc_s-7-20180303.so.1
+7fc115813000-7fc115814000 rw-p 00016000 00:00 5671        /usr/lib64/libgcc_s-7-20180303.so.1
+7fc115814000-7fc115816000 r-xp 00000000 00:00 25105       /usr/lib64/libdl-2.17.so
+7fc115816000-7fc115a16000 ---p 00002000 00:00 25105       /usr/lib64/libdl-2.17.so
+7fc115a16000-7fc115a17000 r--p 00002000 00:00 25105       /usr/lib64/libdl-2.17.so
+7fc115a17000-7fc115a18000 rw-p 00003000 00:00 25105       /usr/lib64/libdl-2.17.so
+7fc115a18000-7fc115bdc000 r-xp 00000000 00:00 24989       /usr/lib64/libc-2.17.so
+7fc115bdc000-7fc115ddb000 ---p 001c4000 00:00 24989       /usr/lib64/libc-2.17.so
+7fc115ddb000-7fc115ddf000 r--p 001c3000 00:00 24989       /usr/lib64/libc-2.17.so
+7fc115ddf000-7fc115de1000 rw-p 001c7000 00:00 24989       /usr/lib64/libc-2.17.so
+7fc115de1000-7fc115de6000 rw-p 00000000 00:00 0           
+7fc115de6000-7fc115e2e000 r-xp 00000000 00:00 5920        /usr/lib64/libtcmalloc.so.4.2.6
+7fc115e2e000-7fc11602d000 ---p 00048000 00:00 5920        /usr/lib64/libtcmalloc.so.4.2.6
+7fc11602d000-7fc11602e000 r--p 00047000 00:00 5920        /usr/lib64/libtcmalloc.so.4.2.6
+7fc11602e000-7fc116030000 rw-p 00048000 00:00 5920        /usr/lib64/libtcmalloc.so.4.2.6
+7fc116030000-7fc116059000 rw-p 00000000 00:00 0           
+7fc116059000-7fc11615a000 r-xp 00000000 00:00 25153       /usr/lib64/libm-2.17.so
+7fc11615a000-7fc116359000 ---p 00101000 00:00 25153       /usr/lib64/libm-2.17.so
+7fc116359000-7fc11635a000 r--p 00100000 00:00 25153       /usr/lib64/libm-2.17.so
+7fc11635a000-7fc11635b000 rw-p 00101000 00:00 25153       /usr/lib64/libm-2.17.so
+7fc11635b000-7fc1164d6000 r-xp 00000000 00:00 5077        /usr/lib64/libstdc++.so.6.0.24
+7fc1164d6000-7fc1166d6000 ---p 0017b000 00:00 5077        /usr/lib64/libstdc++.so.6.0.24
+7fc1166d6000-7fc1166e0000 r--p 0017b000 00:00 5077        /usr/lib64/libstdc++.so.6.0.24
+7fc1166e0000-7fc1166e2000 rw-p 00185000 00:00 5077        /usr/lib64/libstdc++.so.6.0.24
+7fc1166e2000-7fc1166e6000 rw-p 00000000 00:00 0           
+7fc1166e6000-7fc116708000 r-xp 00000000 00:00 4899        /usr/lib64/ld-2.17.so
+7fc1167c5000-7fc1167ff000 rw-p 00000000 00:00 0           
+7fc1167ff000-7fc116802000 r-xp 00000000 00:00 25620       /usr/lib64/libonion_security.so.1.0.19
+7fc116802000-7fc116902000 ---p 00003000 00:00 25620       /usr/lib64/libonion_security.so.1.0.19
+7fc116902000-7fc116903000 rw-p 00003000 00:00 25620       /usr/lib64/libonion_security.so.1.0.19
+7fc116903000-7fc116907000 rw-p 00000000 00:00 0           
+7fc116907000-7fc116908000 r--p 00021000 00:00 4899        /usr/lib64/ld-2.17.so
+7fc116908000-7fc116909000 rw-p 00022000 00:00 4899        /usr/lib64/ld-2.17.so
+7fc116909000-7fc11690a000 rw-p 00000000 00:00 0           
+7ffead70e000-7ffead72f000 rw-p 00000000 00:00 0           [stack]
+7ffead7d2000-7ffead7d4000 r-xp 00000000 00:00 0           [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0           [vsyscall]
