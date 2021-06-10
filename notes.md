@@ -1,5 +1,19 @@
 # 笔记
 
+## 2021-06
+
+### 梳理一下查memory leak的过程
+
+常用的性能分析工具的简述：
+
+- perf：Linux内核内置的工具，主要是查CPU，查完输出可以编程火焰图，比较好看
+- gperftools：google出品，有4个部分：1-tcmalloc，2-heap-checker，3-heap-profiler，4-cpu-profiler，主要是通过tcmalloc和profiler库做这些分析
+- asan：Address Sanitizer，可以分析内存的使用，也是google的，不过已经被gcc4.8以上收纳，原理简单说是标记内存的new/free，用单例去查一个会结束的进程的memory leak很好用，但是在线服务这种不会优雅结束的，不太试用
+- GNU gprof：GNU G++自带的热点分析工具，使用-pg选项重新编译代码，暂时没去了解
+- Valgrind：性能拉跨，工业界基本没见用过
+
+通过heap profiler来看内存使用，对于复杂模块也比较困难，所以排查内存泄漏最好的方法，我目前的理解，还是缩小到某一次commit，或者通过对代码的理解，并不是说有一套工具+排查方法是万金油
+
 ## 2021-05
 
 ### gdb + strace sleep
