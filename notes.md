@@ -14,6 +14,10 @@
 
 通过heap profiler来看内存使用，对于复杂模块也比较困难，所以排查内存泄漏最好的方法，我目前的理解，还是缩小到某一次commit，或者通过对代码的理解，并不是说有一套工具+排查方法是万金油
 
+- gperftools的使用 `gperftools` 目录
+- asan的使用 `asan` 目录
+- perf的使用 `perf` 目录，TODO噢
+
 ## 2021-05
 
 ### gdb + strace sleep
