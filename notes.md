@@ -5,7 +5,7 @@
 ### google benchmark 初始化
 
 - https://stackoverflow.com/questions/58342860/google-benchmark-custom-setup-and-teardown-method
-- 可以看看 gbench_demo/stl_map_bench.cc
+- 就是写个单例，单例构造函数进行static变量初始化，可以看看 gbench_demo/stl_map_bench.cc
 
 ### 梳理一下查memory leak的过程
 
