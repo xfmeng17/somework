@@ -2,6 +2,11 @@
 
 ## 2021-06
 
+### google benchmark 初始化
+
+- https://stackoverflow.com/questions/58342860/google-benchmark-custom-setup-and-teardown-method
+- 可以看看 gbench_demo/stl_map_bench.cc
+
 ### 梳理一下查memory leak的过程
 
 常用的性能分析工具的简述：
