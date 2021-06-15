@@ -16,6 +16,12 @@ http_archive(
 )
 
 git_repository(
+  name = "git_googlebentchmark",
+  remote = "https://github.com/google/benchmark.git",
+  tag = "v1.5.3",
+)
+
+git_repository(
   name = "git_protobuf",
   remote = "https://github.com/protocolbuffers/protobuf.git",
   tag = "v3.8.0",
