@@ -63,6 +63,7 @@ class SetupMap {
     assert(tree_int_map.size() == hash_int_map.size());
     assert(tree_int_map.size() == key_int_vec.size());
     std::random_shuffle(key_int_vec.begin(), key_int_vec.end());
+    std::cout << "SetupMap Construct !!!" << std::endl;
   }
 
  public:
