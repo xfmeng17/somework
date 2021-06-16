@@ -6,6 +6,9 @@
 // 参考下文API文档
 // https://gerrit.pixelexperience.org/plugins/gitiles/external_libcxx/+/d9b9ef75a8ada5f9caaf2f4984bfb8094ade2590/utils/google-benchmark/include/benchmark/benchmark_api.h
 
+// benchmark README
+// https://github.com/google/benchmark#output-formats
+
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
