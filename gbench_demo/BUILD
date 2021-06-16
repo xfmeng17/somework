@@ -13,3 +13,17 @@ cc_binary(
     "@git_googlebentchmark//:benchmark_main",
   ],
 )
+
+cc_binary(
+  name = "readme_demo",
+  srcs = [
+    "readme_demo.cc",
+  ],
+  copts = [
+    "-Wno-unused-function",
+    "-Wno-unused-but-set-variable",
+  ],
+  deps = [
+    "@git_googlebentchmark//:benchmark_main",
+  ],
+)
