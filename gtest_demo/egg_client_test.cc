@@ -10,11 +10,11 @@ TEST(GtestDemo, Demo01) {
   EXPECT_EQ(s, "abcs");
 
   bool b1 = false;
-  EXPECT_FALSE(b);
+  EXPECT_FALSE(b1);
 
   bool b2 = false;
-  EXPECT_TRUE(b);
+  EXPECT_TRUE(b2);
 
+  bool ret = true;
   EXPECT_TRUE(ret);
 }
-
