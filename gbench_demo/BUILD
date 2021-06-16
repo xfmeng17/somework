@@ -27,3 +27,17 @@ cc_binary(
     "@git_googlebentchmark//:benchmark_main",
   ],
 )
+
+cc_binary(
+  name = "myself_main",
+  srcs = [
+    "myself_main.cc",
+  ],
+  copts = [
+    "-Wno-unused-function",
+    "-Wno-unused-but-set-variable",
+  ],
+  deps = [
+    "@git_googlebentchmark//:benchmark_main",
+  ],
+)
