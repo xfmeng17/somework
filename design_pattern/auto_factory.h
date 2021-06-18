@@ -73,7 +73,7 @@ class factory {
     }
 
     std::cout << "produce() find key=" << key << " and then do new" << std::endl;
-    return map[key]();
+    // return map[key]();
     // std::function<action*(void)>& construct_f = it->second;
     // return construct_f();
   }
