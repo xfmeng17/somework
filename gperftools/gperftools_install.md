@@ -24,7 +24,7 @@ devcloud下的都没啥问题，用的很好，坑比的来了，进入FSGCC8编
 
 1. 进程堆栈参考**tcmalloc_deadlock.png**只有一个主线程，是tcmalloc在X86_64下已知的BUG
 2. 和这篇文章写的注意一样 <https://blog.csdn.net/weixin_30655219/article/details/95254832> 分析在这个文章 <https://www.cnblogs.com/minglee/p/10097644.html>
-3. **猜测** FSGCC8的镜像make前configure时，没有加 `--enable-frame-pointers` 稀里糊涂懂得都懂
+3. **猜测** FSGCC8的镜像make前configure时，没有加 `--enable-frame-pointers` 为啥能搞上呢，是因为用的mini，估计都没遇到我遇到的问题，懂得都懂。所以如果实在搞不定，就用tcmalloc_minimal
 
 ## 2. 如何用tcmalloc_and_profiler静态库，DEVCLOUD_GCC_7.3
 
