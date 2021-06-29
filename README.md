@@ -4,7 +4,7 @@
 
 ### gperftools 静态库踩坑记
 
-详见 gperftools/static_lib_install.md
+详见 gperftools/gperftools_install.md
 
 ### google benchmark 初始化
 
