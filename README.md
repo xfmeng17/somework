@@ -2,6 +2,10 @@
 
 ## 2021-06
 
+### gperftools 静态库踩坑记
+
+详见 gperftools/static_lib_install.md
+
 ### google benchmark 初始化
 
 - https://stackoverflow.com/questions/58342860/google-benchmark-custom-setup-and-teardown-method
